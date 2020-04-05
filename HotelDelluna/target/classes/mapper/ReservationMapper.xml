@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper
+	namespace="com.spring.jaeho.mybatis.mapper.ReservationMapper">
+
+	<insert id="reservation_number_people" parameterType="ReservationDTO">
+		INSERT INTO
+		reservation_number_people
+		(reservation_number,room_type,adult,child)
+		VALUES(#{reservation_number},#{room_type},#{adult},#{child})
+	</insert>
+	<select id="RoomPrice" parameterType="ReservationDTO"
+		resultType="int">
+		SELECT room_prices
+		FROM room_information
+		WHERE
+		room_type=#{room_type}
+	</select>
+
+	<insert id="reservationInsert" parameterType="ReservationDTO">
+		INSERT INTO
+		reservation
+		(reservation_number,m_id,reservation_date_in,reservation_date_out,price,confirmation_payment)
+		VALUES
+		(#{reservation_number},#{m_id},#{reservation_data_in},#{reservation_data_out},#{price},#{confirmation_payment})
+	</insert>
+
+	<select id="DuplicateFind" resultType="int"
+		parameterType="ReservationDTO">
+		SELECT count(*) FROM reservation r JOIN reservation_number_people p
+		ON
+		r.reservation_number = p.reservation_number
+		WHERE
+		room_type IN(#{room_type})
+		AND
+		( #{reservation_data_in} BETWEEN reservation_date_in AND
+		reservation_date_out
+		OR
+		#{reservation_data_out} BETWEEN reservation_date_in AND reservation_date_out);
+	</select>
+	
+	<select id="PayCheck" resultType="String" >
+      SELECT
+       confirmation_payment 
+      FROM 
+      reservation 
+      WHERE
+       m_id=#{m_id}
+	</select>
+	
+	<update id="PayCheckUpdate" parameterType="String">
+	UPDATE
+      reservation 
+	  SET confirmation_payment = 1 
+	 WHERE
+	  reservation_number=#{reservation_number}
+	</update>
+		
+	<delete id="ReservationDelete">
+		 DELETE
+		  FROM 
+		 reservation_number_people
+		</delete>
+		
+		<select id="ReservationSelect" resultType="ReservationDTO" parameterType="String">
+		SELECT * FROM 
+		reservation r JOIN reservation_number_people p ON r.reservation_number = p.reservation_number 
+		WHERE  m_id = #{m_id}
+		</select>
+		<select id="SearchPW" parameterType="String" resultType="String">
+		   SELECT m_password FROM member WHERE m_id= #{m_id}
+		</select>
+		
+       </mapper>

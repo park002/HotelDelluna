@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.spring.jaeho.mybatis.mapper.MemberMapper">
+
+	
+	<select id="duplicateCheck" resultType="MemberDTO" parameterType="String"> 
+	 SELECT m_id FROM member WHERE m_id =#{m_id}
+	</select>
+	
+	<insert id="MemberInsert" parameterType="MemberDTO">
+        INSERT INTO member
+		(m_id,m_name,m_zip1,m_zip2,m_zip3,m_password,m_userEmail,m_tel)
+		VALUES
+		(#{m_id},#{m_name},#{m_zip1},#{m_zip2},#{m_zip3},#{m_password},#{m_userEmail},#{m_tel})
+	</insert>
+	
+	<select id="MemberLogin"  resultType="String" parameterType="MemberDTO">
+	   SELECT m_id,m_password FROM member WHERE m_id=#{m_id} AND m_password=#{m_password}
+	</select>
+</mapper>
