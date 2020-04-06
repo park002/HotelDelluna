@@ -104,7 +104,7 @@
                                         <ul>                                
                                     		<li><a href="hotel-About-Us.html"><div>호텔소개</div></a></li>
                                     		<li><a href="Location.html"><div>호텔위치</div></a></li>
-                                    		<li><a href="list.do"><div>공지사항</div></a></li>
+                                    		<li><a href="<c:url value='/notice/NoticeList'/>"><div>공지사항</div></a></li>
                                          </ul>                                                              
                             </li>
                             <li><a href="#" onclick="return false;"><div>객실</div></a>
