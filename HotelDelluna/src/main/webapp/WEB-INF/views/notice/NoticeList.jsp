@@ -169,38 +169,26 @@
         </section><!-- #page-title end -->
 
 <!-- 검색창  -->
+
 <br>
 <form name="test"  action="/hotel/list.do">
    <select name="search">
       <option value="subject_content">통합검색</option>
    </select>
+   
    <input type="text" size="30" name="searchtext">&nbsp;
-   <input type="submit" value="검색">
+   
+   <input type="submit" value="검색"> 
+   <input type="button" class="btn btn-link" onclick="location.href='<c:url value='/notice/NoticeWrite'/>'" value="글 작성">
 </form>
 
 <!--관리자만 글쓰기 가능 ----------------------------------------------------------------------------------------- -->
 <br>
-<input type="button" onclick="location.href='<c:url value='/notice/NoticeWrite'/>'" value="글 작성">
-
-
-<%-- <c:if test="${m_id eq 'admin'}"> 
- <input type="button" value="글작성" style="border:1px solid red; font-size:11pt; background-color:white; color:red; border-radius:5px; margin-left:150px;'"
-			 onclick="document.location.href='/hotel/writeForm.do'">
-</c:if> --%>
 
 <!-- ---------------------------------------------------------------------------------------------------- -->
 <!-- 게시글 없을때  -->
 
-<%-- <br>
-<c:if test="${pgList.count==0}">
-<div class="entry clearfix">
-<table border="1" width="700" cellpadding="0" cellspacing="0" align="center">
-   <tr>
-        <td align="center">저장된 글이 없습니다.</td>
-   </tr>
-</table>
-</div>
-</c:if> --%>
+
 		<script>
 		function page(curPage) {
 		 	 location.href="${pageContext.request.contextPath}/notice/NoticeList?curPage="+curPage
@@ -214,6 +202,7 @@
 			<th>작성일</th>
 			<th>조회수</th>
 			</tr>
+			
 		<c:forEach items="${list}" var="NoticeList"> 
 		      <tr> 
 				      <td><c:out value="${NoticeList.b_no}"/> </td>
@@ -221,89 +210,36 @@
 				      <td> <fmt:formatDate value="${NoticeList.b_date}" pattern="yyyy-MM-dd"/></td>
 				      <td><c:out value="${NoticeList.b_count}"/> </td>
 		      </tr>
-	 </c:forEach>
+		</c:forEach>
 	      </table>
-	      <c:if test="${1<page.curBlock}">
-	       <a href="#" onclick="page(1)">[처음]</a> 
-	      </c:if>
-	      <c:if test="${1<page.curBlock}">
-	        	<a href="#" onclick="page('${page.prevPage}')">[이전]</a>
-	       </c:if>
-	      <c:forEach begin="${page.blockBegin}"  end="${page.blockEnd}" var="num">
-		      <c:choose> 
-		      <c:when test="${num == page.curPage}">
-		         	    <span style="color: red">${num}</span>&nbsp;
-		      </c:when>
-		      <c:otherwise>
-		           <a href="#" onclick="page('${num}')">${num} </a>     
-		      </c:otherwise>
-		      </c:choose>
-	  </c:forEach>
-	       
-	       <c:if test="${page.curBlock<=page.totBlock}">
-	    		<a href="#" onclick="page('${page.nextPage}')">[다음]</a>
-	     </c:if>
-	     <c:if test="${page.curBlock <=page.totPage}">
-  	        <a href="#" onclick="page('${page.totPage}')"> [끝] </a>
-	     </c:if>
-      	
-
-      
-<%-- <!--게시글 있을때 -->
-<br>
-<c:if test="${pgList.count > 0}">
-<div class="entry clearfix">   
-   <table style="font-size:17px; color:black">
-    <tr height="40" style="font-weight:bolder"> 
-      <td align="center" width="50">번호</td> 
-      <td align="center" width="250" >제목</td> 
-      <td align="center" width="50" >작성일</td> 
-    </tr>
-    
-    <c:set var="number" value="${pgList.number}" />
-    <c:forEach var="article" items="${articleList}">
-    <td align="center"  width="70" >
-          <c:out value="${number}" />
-          <c:set var="number"  value="${number-1}" />
-    </td>
-    <td width="250" >
-    
-    <!-- num(게시물번호),pageNum(페이지번호)  -->           
-      <a href="/hotel/content.do?num=${article.notice_number}&pageNum=${pgList.currentPage}" style="color:black">${article.notice_title}</a> 
-    </td>
-    <td align="center" width="150">
-        <fmt:formatDate value="${article.notice_date}" timeStyle="medium" pattern="yyyy-MM-dd"/>
-    </td>
-    <td align="center" width="50">${article.readcount}</td>
-  </tr>
-   </c:forEach>
-</table>
-</div>
-</c:if>
- --%>
-<!-- 페이징 처리  -->
-      <%-- <center>
-         <c:if test="${pgList.startPage > pgList.blockSize}">
-            <a
-               href="/hotel/list.do?pageNum=${pgList.startPage-pgList.blockSize}&search=${search}&searchtext=${searchtext}">[이전]</a>
-         </c:if>
-
-         <c:forEach var="i" begin="${pgList.startPage}" end="${pgList.endPage}">
-            <a href="/hotel/list.do?pageNum=${i}&search=${search}&searchtext=${searchtext}">
-         <c:if test="${pgList.currentPage==i}">
-            <font color="black"><b>[${i}]</b></font>
-         </c:if> <c:if test="${pgList.currentPage!=i}">${i}
-      </c:if>
-     
-            </a>
-         </c:forEach>
-
-         <c:if test="${pgList.endPage < pgList.pageCount}">
-            <a href="/hotel/list.do?pageNum=${pgList.startPage+pgList.blockSize}&search=${search}&searchtext=${searchtext}">[다음]</a>
-         </c:if>
-      </center>
-
- --%>
+	      <br>
+ 	<div style="text-align:center"> 
+		  <c:if test="${1<page.curBlock}">
+		       	<a href="#" onclick="page(1)">처음</a> 
+		 </c:if>
+		   
+		      <c:if test="${1<page.curBlock}">
+		        	<a href="#" onclick="page('${page.prevPage}')">이전</a>
+		       </c:if>
+		      <c:forEach begin="${page.blockBegin}"  end="${page.blockEnd}" var="num">
+			      <c:choose> 
+			      <c:when test="${num == page.curPage}">
+			         	    <span style="color: red">${num}</span>&nbsp;
+			      </c:when>
+			      <c:otherwise>
+			           <a href="#" onclick="page('${num}')">${num} </a>  &nbsp;
+			      </c:otherwise>
+			      </c:choose>
+		  </c:forEach>
+		       <c:if test="${page.curBlock<=page.totBlock}">
+		    		<a href="#" onclick="page('${page.nextPage}')">다음</a>
+		     </c:if>
+		     <c:if test="${page.curBlock <=page.totPage}">
+	  	        <a href="#" onclick="page('${page.totPage}')"> 끝 </a>
+		     </c:if>
+   </div>
+	
+   
     
         </section><!-- #content end --> 
 

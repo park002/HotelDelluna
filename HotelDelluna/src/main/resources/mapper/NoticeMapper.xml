@@ -9,7 +9,7 @@
 		</insert>
 		
 		<select id="NoticeList" resultType="NoticeDTO" parameterType="hashMap">
-				SELECT b_no,b_title,b_writer,b_date,b_count  FROM notice ORDER BY b_no DESC LIMIT #{start},#{end}
+				SELECT b_no,b_title,b_writer,b_date,b_count  FROM notice ORDER BY b_no DESC LIMIT ${start-1},#{end}
 		</select>
 		
 		<update id="NoticeCountUpdate" parameterType="int">
@@ -23,4 +23,5 @@
 		<select id="SelectCount" resultType="int" parameterType="int">
 		   		SELECT count(*) FROM notice 
 		</select>
+		
 </mapper>
