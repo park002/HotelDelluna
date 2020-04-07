@@ -3,7 +3,7 @@ package com.hotel.jaeho.page;
 // 페이지 나누기 관련 작업 클래스
 public class Pagination {
 	// 페이지당 게시물 수
-	public static final int PAGE_SCALE = 8;
+	public static final int PAGE_SCALE = 2;
 	// 화면당 페이지 수
 	public static final int BLOCK_SCALE = 5;
 	private int curPage; // 현재 페이수
@@ -40,7 +40,7 @@ public class Pagination {
 		// 9페이지 => 	1블록 (9-1)/10 + 1 => 1
 		// 11페이지 => 2블록 (11-1)/10 + 1 => 2
 		// 57페이지 => 6블록 (57-1)/10 + 1 => 6 
-		curBlock = (int)Math.ceil((curPage-1) / BLOCK_SCALE)+1;
+		curBlock = (int)Math.ceil( (curPage-1) / BLOCK_SCALE)+1;
 		// *현재 페이지 블록의 시작, 끝 번호 계산
 		// 페이지 블록의 시작번호
 		// (현재블록-1)*블록단위+1

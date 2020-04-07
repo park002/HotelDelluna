@@ -1,6 +1,8 @@
 package com.hotel.jaeho.Service;
 
+
 import java.util.List;
+
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -19,9 +21,25 @@ public class NoticeServiceImpl implements NoticeService {
 		dao.NoticeInsert(dto);
 	}
 	@Override
-	public List<NoticeDTO> NoticeSelect() {
+	public List<NoticeDTO> NoticeSelect(int start,int end) {
 		// TODO Auto-generated method stub
-		return dao.NoticeSelect();
+		
+		return dao.NoticeSelect(start,end);
+	}
+	@Override
+	public void NoticeCountUpdate(int b_no) {
+		// TODO Auto-generated method stub
+		dao.NoticeCountUpdate(b_no);
+	}
+	@Override
+	public NoticeDTO SelectNotice(int b_no) {
+		// TODO Auto-generated method stub
+		return dao.SelectNotice(b_no);
+	}
+	@Override
+	public int SelectCount() {
+		// TODO Auto-generated method stub
+		return dao.SelectCount();
 	}
 
 }

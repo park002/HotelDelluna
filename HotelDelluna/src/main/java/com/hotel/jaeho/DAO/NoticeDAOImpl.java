@@ -1,6 +1,8 @@
 package com.hotel.jaeho.DAO;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,13 +21,32 @@ public class NoticeDAOImpl implements NoticeDAO {
 	@Override
 	public void NoticeInsert(NoticeDTO dto) {
 		// TODO Auto-generated method stub
-		sqlSession.insert(namespace +".NoticeInsert",dto);
+		sqlSession.insert(namespace + ".NoticeInsert", dto);
 
 	}
+
 	@Override
-	public List<NoticeDTO> NoticeSelect() {
+	public List<NoticeDTO> NoticeSelect(int start,int end) {
 		// TODO Auto-generated method stub
-		
-		return sqlSession.selectList(namespace+".NoticeList");
+        Map<String,Object>map = new HashMap<String,Object>();
+        map.put("start",start);
+        map.put("end",end);
+		return sqlSession.selectList(namespace + ".NoticeList",map);
+	}
+
+	@Override
+	public void NoticeCountUpdate(int b_no) {
+		// TODO Auto-generated method stub
+		sqlSession.update(namespace + ".NoticeCountUpdate", b_no);
+	}
+	@Override
+	public NoticeDTO SelectNotice(int b_no) {
+		// TODO Auto-generated method stub
+		return sqlSession.selectOne(namespace+".SelectNotice",b_no);
+	}
+	@Override
+	public int SelectCount() {
+		// TODO Auto-generated method stub
+		return sqlSession.selectOne(namespace+".SelectCount");
 	}
 }

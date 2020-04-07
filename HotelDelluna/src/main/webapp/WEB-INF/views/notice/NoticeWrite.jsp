@@ -183,7 +183,7 @@
 
                             <div class="col_two_third">
                                 <label for="template-contactform-subject">제목 <small>*</small></label>
-                                <input type="text" id="template-contactform-subject" name="b_title"  class="required sm-form-control"   maxlength="40" placeholder="제목을 입력해주세요"/>
+                                <input type="text" id="template-contactform-subject" name="b_title"  class="required sm-form-control"   maxlength="40" placeholder="제목을 입력해주세요" required="required"/>
                             </div>
 
                             <!-- <div class="col_one_third col_last">
@@ -201,7 +201,7 @@
 
                             <div class="col_full">
                                 <label for="template-contactform-message">작성 <small>*</small></label>
-                                <textarea class="required sm-form-control" id="template-contactform-message" name="b_detail" rows="15" cols="30" placeholder="글을 작성해주세요"></textarea>
+                                <textarea class="required sm-form-control" id="template-contactform-message" name="b_detail" rows="15" cols="30" placeholder="글을 작성해주세요" required="required" ></textarea>
                             </div>
 
                             <!-- <div class="col_full hidden">

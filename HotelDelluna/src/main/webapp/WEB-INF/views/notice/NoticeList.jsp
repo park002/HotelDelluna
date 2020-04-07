@@ -201,6 +201,12 @@
 </table>
 </div>
 </c:if> --%>
+		<script>
+		function page(curPage) {
+		 	 location.href="${pageContext.request.contextPath}/notice/NoticeList?curPage="+curPage
+		}
+		
+		</script>
 		<table>
 			<tr>
 			<th>NO</th>
@@ -209,14 +215,40 @@
 			<th>조회수</th>
 			</tr>
 		<c:forEach items="${list}" var="NoticeList"> 
-	      <tr> 
-		      <td><c:out value="${NoticeList.b_no}"/> </td>
-		      <td onclick="location.href='<c:url value="/notice/NoticeContent?b_no=${NoticeList.b_no}"/>'"><a href ="#"><c:out value="${NoticeList.b_title}"/></a></td>
-		      <td> <fmt:formatDate value="${NoticeList.b_date}" pattern="yyyy-MM-dd"/></td>
-		      <td><c:out value="${NoticeList.b_count}"/> </td>
-	      </tr>
-		</c:forEach>
-      </table>
+		      <tr> 
+				      <td><c:out value="${NoticeList.b_no}"/> </td>
+				      <td onclick="location.href='<c:url value="/notice/NoticeContent?b_no=${NoticeList.b_no}"/>'"><a href ="#"><c:out value="${NoticeList.b_title}"/></a></td>
+				      <td> <fmt:formatDate value="${NoticeList.b_date}" pattern="yyyy-MM-dd"/></td>
+				      <td><c:out value="${NoticeList.b_count}"/> </td>
+		      </tr>
+	 </c:forEach>
+	      </table>
+	      <c:if test="${1<page.curBlock}">
+	       <a href="#" onclick="page(1)">[처음]</a> 
+	      </c:if>
+	      <c:if test="${1<page.curBlock}">
+	        	<a href="#" onclick="page('${page.prevPage}')">[이전]</a>
+	       </c:if>
+	      <c:forEach begin="${page.blockBegin}"  end="${page.blockEnd}" var="num">
+		      <c:choose> 
+		      <c:when test="${num == page.curPage}">
+		         	    <span style="color: red">${num}</span>&nbsp;
+		      </c:when>
+		      <c:otherwise>
+		           <a href="#" onclick="page('${num}')">${num} </a>     
+		      </c:otherwise>
+		      </c:choose>
+	  </c:forEach>
+	       
+	       <c:if test="${page.curBlock<=page.totBlock}">
+	    		<a href="#" onclick="page('${page.nextPage}')">[다음]</a>
+	     </c:if>
+	     <c:if test="${page.curBlock <=page.totPage}">
+  	        <a href="#" onclick="page('${page.totPage}')"> [끝] </a>
+	     </c:if>
+      	
+
+      
 <%-- <!--게시글 있을때 -->
 <br>
 <c:if test="${pgList.count > 0}">
