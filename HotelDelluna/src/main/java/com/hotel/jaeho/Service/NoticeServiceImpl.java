@@ -20,11 +20,12 @@ public class NoticeServiceImpl implements NoticeService {
 		// TODO Auto-generated method stub
 		dao.NoticeInsert(dto);
 	}
+	
 	@Override
-	public List<NoticeDTO> NoticeSelect(int start,int end) {
+	public List<NoticeDTO> NoticeSelect(int start,int end,String Search,String Searchtext) {
 		// TODO Auto-generated method stub
 		
-		return dao.NoticeSelect(start,end);
+		return dao.NoticeSelect(start,end,Search,Searchtext);
 	}
 	@Override
 	public void NoticeCountUpdate(int b_no) {
@@ -37,9 +38,9 @@ public class NoticeServiceImpl implements NoticeService {
 		return dao.SelectNotice(b_no);
 	}
 	@Override
-	public int SelectCount() {
+	public int SelectCount(String Search, String Searchtext) {
 		// TODO Auto-generated method stub
-		return dao.SelectCount();
+		return dao.SelectCount(Search,Searchtext);
 	}
 
 }

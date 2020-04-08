@@ -25,17 +25,20 @@ public class NoticeController {
 
 //공지사항 클릭 했을 경우 
 	@RequestMapping(value = "/NoticeList", method = RequestMethod.GET)
-	public ModelAndView Notice(@RequestParam(value ="curPage",required = false,defaultValue = "1") int curPage) { //총 레코드 갯수 구하고 , 현재페이지도 줘야하고 
+	public ModelAndView Notice(@RequestParam(value = "curPage", required = false, defaultValue = "1") int curPage,
+			@RequestParam(value = "Search", defaultValue = "Search") String Search,
+			@RequestParam(value = "Searchtext", required = false) String Searchtext) {
 		ModelAndView mav = new ModelAndView();
-		int count = service.SelectCount();
-    	Pagination page = new Pagination(count,curPage);
+		int count = service.SelectCount(Search, Searchtext);
+		Pagination page = new Pagination(count, curPage);
 		mav.setViewName("/notice/NoticeList");
-		Map<String,Object> map  = new HashMap<String, Object>();
-		int start = page.getPageBegin(); //1
+		int start = page.getPageBegin(); // 1
 		int end = page.getPageScale(); //
-		List<NoticeDTO> list = service.NoticeSelect(start,end);
-	    mav.addObject("page",page);
+		List<NoticeDTO> list = service.NoticeSelect(start, end, Search, Searchtext);
+		mav.addObject("page", page);
 		mav.addObject("list", list);
+		mav.addObject("Search", Search);
+		mav.addObject("Searchtext", Searchtext);
 		return mav;
 	}
 

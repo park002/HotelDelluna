@@ -9,12 +9,12 @@ public interface NoticeDAO {
 
 	public void NoticeInsert(NoticeDTO dto);
 
-	public List<NoticeDTO> NoticeSelect(int start,int end);
+	public List<NoticeDTO> NoticeSelect(int start,int end,String Search,String Searchtext);
 
 	public void NoticeCountUpdate(int b_no);
 	
 	public NoticeDTO SelectNotice(int b_no);
 	
-    public int SelectCount();
+    public int SelectCount(String Search, String Searchtext);
     
 }

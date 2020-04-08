@@ -24,13 +24,15 @@ public class NoticeDAOImpl implements NoticeDAO {
 		sqlSession.insert(namespace + ".NoticeInsert", dto);
 
 	}
-
+	
 	@Override
-	public List<NoticeDTO> NoticeSelect(int start,int end) {
+	public List<NoticeDTO> NoticeSelect(int start,int end,String Search,String Searchtext) {
 		// TODO Auto-generated method stub
         Map<String,Object>map = new HashMap<String,Object>();
         map.put("start",start);
         map.put("end",end);
+        map.put("Search",Search);
+        map.put("Searchtext",Searchtext);
 		return sqlSession.selectList(namespace + ".NoticeList",map);
 	}
 
@@ -45,8 +47,12 @@ public class NoticeDAOImpl implements NoticeDAO {
 		return sqlSession.selectOne(namespace+".SelectNotice",b_no);
 	}
 	@Override
-	public int SelectCount() {
+	public int SelectCount(String Search, String Searchtext) {
+		Map<String,String>map = new HashMap<String, String>();
 		// TODO Auto-generated method stub
-		return sqlSession.selectOne(namespace+".SelectCount");
+		 map.put("Search",Search);
+	     map.put("Searchtext",Searchtext);
+	        
+		return sqlSession.selectOne(namespace+".SelectCount",map);
 	}
 }

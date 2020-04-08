@@ -168,21 +168,29 @@
             </div><br>
         </section><!-- #page-title end -->
 
-<!-- 검색창  -->
 
 <br>
-<form name="test"  action="/hotel/list.do">
-   <select name="search">
-      <option value="subject_content">통합검색</option>
-   </select>
-   
-   <input type="text" size="30" name="searchtext">&nbsp;
-   
-   <input type="submit" value="검색"> 
-   <input type="button" class="btn btn-link" onclick="location.href='<c:url value='/notice/NoticeWrite'/>'" value="글 작성">
-</form>
 
-<!--관리자만 글쓰기 가능 ----------------------------------------------------------------------------------------- -->
+<form action="<c:url value='/notice/NoticeList'/>">
+
+<%--      <option value="SearchSearch" <c:if test="${Search eq 'SearchSearch'}"> selected</c:if>>글번호</option>
+     <option value="TitleSearch" <c:if test="${Search eq 'TitleSearch'}"> selected</c:if>>제목</option>
+     <option value="ContentSearch" <c:if test="${Search eq 'ContentSearch'}"> selected</c:if>>내용</option> --%>
+     
+<%--      <c:if test="${m_id eq 'admin'}"> --%>
+            		<button type="button" class="well well-sm" onclick="location.href='<c:url value='/notice/NoticeWrite'/>'" 
+   		 value="글 작성" style="border-radius: 10px;">글 작성</button>
+   		<%--  </c:if> --%>
+   		 
+       <select name="Search" class="btn btn-secondary" >
+	       <option value="SearchSearch"<c:out value="${Search eq 'SearchSearch' ? 'selected':''}"/>>  글번호</option>
+		  <option value="TitleSearch"<c:out value="${Search eq 'TitleSearch' ? 'selected' : ''}"/>>제목</option>
+	      <option value="ContentSearch"<c:out value="${Search eq 'ContentSearch' ? 'selected' : ''}"/>>내용</option> 
+   </select>
+		<input type="text" class="well well-sm" name="Searchtext" id="Searchtext" size="30" placeholder="검색을 통해 찾아보세요"  value="${Searchtext}">&nbsp;
+   		<button  value="검색" class="well well-sm">검색 </button>
+
+</form>
 <br>
 
 <!-- ---------------------------------------------------------------------------------------------------- -->
@@ -191,8 +199,15 @@
 
 		<script>
 		function page(curPage) {
-		 	 location.href="${pageContext.request.contextPath}/notice/NoticeList?curPage="+curPage
+		 	 location.href="${pageContext.request.contextPath}/notice/NoticeList?curPage="+curPage+
+		 			 "&Search=${Search}"+"&Searchtext=${Searchtext}"
 		}
+		
+		
+		$(document).on('click', 'a[href="#"]', function(e){
+			e.preventDefault();
+		});
+		
 		
 		</script>
 		<table>
@@ -212,18 +227,19 @@
 		      </tr>
 		</c:forEach>
 	      </table>
+	      
 	      <br>
- 	<div style="text-align:center"> 
+	      
+ 	<div id="paging" style="text-align:center"> 
 		  <c:if test="${1<page.curBlock}">
 		       	<a href="#" onclick="page(1)">처음</a> 
 		 </c:if>
-		   
 		      <c:if test="${1<page.curBlock}">
 		        	<a href="#" onclick="page('${page.prevPage}')">이전</a>
 		       </c:if>
 		      <c:forEach begin="${page.blockBegin}"  end="${page.blockEnd}" var="num">
 			      <c:choose> 
-			      <c:when test="${num == page.curPage}">
+			      <c:when test="${num eq page.curPage}">
 			         	    <span style="color: red">${num}</span>&nbsp;
 			      </c:when>
 			      <c:otherwise>
@@ -239,7 +255,6 @@
 		     </c:if>
    </div>
 	
-   
     
         </section><!-- #content end --> 
 

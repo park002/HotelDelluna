@@ -9,7 +9,19 @@
 		</insert>
 		
 		<select id="NoticeList" resultType="NoticeDTO" parameterType="hashMap">
-				SELECT b_no,b_title,b_writer,b_date,b_count  FROM notice ORDER BY b_no DESC LIMIT ${start-1},#{end}
+				SELECT b_no,b_title,b_detail,b_writer,b_date,b_count  FROM notice 
+				<trim prefix="WHERE" prefixOverrides="AND|OR">
+				   <if test="Search == 'SearchSearch' and Searchtext !=null and Searchtext !=''">
+  				    		AND  b_no LIKE CONCAT('%',#{Searchtext},'%') 
+				    </if>
+				    <if test="Search == 'TitleSearch' and Searchtext !=null and Searchtext!=''">
+				   		    AND b_title LIKE CONCAT('%',#{Searchtext},'%') 
+				    </if>
+				    <if test="Search == 'ContentSearch' and Searchtext !=null and Searchtext!=''">
+				    		AND b_detail LIKE CONCAT('%',#{Searchtext},'%') 
+				    </if>
+				</trim>
+				ORDER BY b_no DESC LIMIT ${start-1},#{end}
 		</select>
 		
 		<update id="NoticeCountUpdate" parameterType="int">
@@ -20,8 +32,23 @@
 				SELECT * FROM notice WHERE b_no = #{b_no}
 		</select>
 		
-		<select id="SelectCount" resultType="int" parameterType="int">
+		<select id="SelectCount" resultType="int" parameterType="hashMap">
 		   		SELECT count(*) FROM notice 
+		   		<trim prefix="WHERE" prefixOverrides="AND|OR">
+		   		
+		   		<if test="Searchtext !=null and Searchtext !='' ">
+		   		<if test="Search=='SearchSearch'">
+		   		    AND  b_no LIKE CONCAT('%',#{Searchtext},'%') 
+		   		</if>
+		   		  <if test="Search == 'TitleSearch'">
+				    AND b_title LIKE CONCAT('%',#{Searchtext},'%') 
+				   </if>
+				   <if test="Search == 'ContentSearch'">
+				    AND b_detail LIKE CONCAT('%',#{Searchtext},'%') 
+				   </if>
+				    
+				    </if>
+		   		</trim>
 		</select>
 		
 </mapper>
