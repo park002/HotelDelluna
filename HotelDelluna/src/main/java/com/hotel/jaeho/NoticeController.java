@@ -10,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.hotel.jaeho.DTO.NoticeDTO;
@@ -51,7 +52,23 @@ public class NoticeController {
 		mav.setViewName("/notice/NoticeContent");
 		return mav;
 	}
-
+	@RequestMapping(value="/WriteModifiy",method = RequestMethod.POST)
+	public String WriteModifiy(NoticeDTO dto) {
+		System.out.println(dto.toString());
+		//b_title=99콘, b_detail=월드콘
+		
+		return null;
+	}
+	
+	@ResponseBody
+	@RequestMapping(value="/NoticeDelete",method=RequestMethod.GET)
+	public int NoticeDelete(@RequestParam("b_no") int b_no) {
+      service.NoticeDelete(b_no);
+	  
+      return b_no;
+	
+	}
+	
 	@RequestMapping("/NoticeWrite")
 	public String NoticeWrite() {
 		return "/notice/NoticeWrite";

@@ -42,5 +42,10 @@ public class NoticeServiceImpl implements NoticeService {
 		// TODO Auto-generated method stub
 		return dao.SelectCount(Search,Searchtext);
 	}
+	@Override
+	public void NoticeDelete(int b_no) {
+		// TODO Auto-generated method stub
+		dao.NoticeDelete(b_no);
+	}
 
 }

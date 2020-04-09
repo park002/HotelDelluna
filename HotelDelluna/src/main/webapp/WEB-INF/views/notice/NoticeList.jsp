@@ -173,7 +173,7 @@
 
 <form action="<c:url value='/notice/NoticeList'/>">
 
-<%--      <option value="SearchSearch" <c:if test="${Search eq 'SearchSearch'}"> selected</c:if>>글번호</option>
+<%--      <option value="" <c:if test="${ eq 'Search'}"> selected</c:if>>글번호</option>
      <option value="TitleSearch" <c:if test="${Search eq 'TitleSearch'}"> selected</c:if>>제목</option>
      <option value="ContentSearch" <c:if test="${Search eq 'ContentSearch'}"> selected</c:if>>내용</option> --%>
      
@@ -187,21 +187,32 @@
 		  <option value="TitleSearch"<c:out value="${Search eq 'TitleSearch' ? 'selected' : ''}"/>>제목</option>
 	      <option value="ContentSearch"<c:out value="${Search eq 'ContentSearch' ? 'selected' : ''}"/>>내용</option> 
    </select>
-		<input type="text" class="well well-sm" name="Searchtext" id="Searchtext" size="30" placeholder="검색을 통해 찾아보세요"  value="${Searchtext}">&nbsp;
+   
+		<input type="text" class="well well-sm" name="Searchtext" id="Searchtext" size="30" placeholder="검색을 통해 찾아보세요" 
+			 value="<c:out value="${Searchtext}"/>">&nbsp;
+		
    		<button  value="검색" class="well well-sm">검색 </button>
-
 </form>
 <br>
 
 <!-- ---------------------------------------------------------------------------------------------------- -->
 <!-- 게시글 없을때  -->
 
-
 		<script>
+		//http://localhost:8090/jaeho/notice/NoticeList?curPage=2&Search=Search&
 		function page(curPage) {
-		 	 location.href="${pageContext.request.contextPath}/notice/NoticeList?curPage="+curPage+
-		 			 "&Search=${Search}"+"&Searchtext=${Searchtext}"
+		 	<%-- /*location.href="?curPage="+curPage+"&Search=${Search}"+"&Searchtext=${Searchtext}" 
+		 	 location.href="<c:url value='/notice/NoticeList?curPage='+${}/>"*/ --%>
+			 location.href='<c:url value="?curPage='+curPage+'">
+						<c:param name="Search">${Search}</c:param>
+						<c:if test="${!empty Searchtext}"><c:param name="Searchtext">${Searchtext}</c:param></c:if>
+					</c:url>'
+				 	
+					 
+			location.href='?curPage='+curPage+'&Search=${Search}&Searchtext=${Searchtext}';
+		 	 <%-- /*  location.href="<c:url value='/notice/NoticeList?curPage='+curPage/>" */  --%>
 		}
+		
 		
 		
 		$(document).on('click', 'a[href="#"]', function(e){
@@ -219,9 +230,9 @@
 			</tr>
 			
 		<c:forEach items="${list}" var="NoticeList"> 
-		      <tr> 
+			<tr>
 				      <td><c:out value="${NoticeList.b_no}"/> </td>
-				      <td onclick="location.href='<c:url value="/notice/NoticeContent?b_no=${NoticeList.b_no}"/>'"><a href ="#"><c:out value="${NoticeList.b_title}"/></a></td>
+				   <td> <a href ="<c:url value='/notice/NoticeContent?b_no=${NoticeList.b_no}'/>"><c:out value="${NoticeList.b_title}"/> </a></td>
 				      <td> <fmt:formatDate value="${NoticeList.b_date}" pattern="yyyy-MM-dd"/></td>
 				      <td><c:out value="${NoticeList.b_count}"/> </td>
 		      </tr>
@@ -229,32 +240,54 @@
 	      </table>
 	      
 	      <br>
-	      
+	  <!--     <a href="#" onclick="page(2)">asasdasdda </a> -->
+	<!-- //http://localhost:8090/jaeho/notice/NoticeList?curPage=2&Search=Search& -->
+	 <!--  //http://locatlhost:8090/jaeho/notice/noticeList?curPage=1&Search=Search -->
  	<div id="paging" style="text-align:center"> 
 		  <c:if test="${1<page.curBlock}">
-		       	<a href="#" onclick="page(1)">처음</a> 
+		<a href="<c:url value="?">
+					<c:param name="curPage">1</c:param>
+					<c:param name="Search">${Search}</c:param>
+					<c:if test="${!empty Searchtext}"><c:param name="Searchtext">${Searchtext}</c:param></c:if>
+				</c:url>">처음</a> 
 		 </c:if>
 		      <c:if test="${1<page.curBlock}">
-		        	<a href="#" onclick="page('${page.prevPage}')">이전</a>
+		        <a href="<c:url value="?">
+					<c:param name="curPage">${page.prevPage}</c:param>
+					<c:param name="Search">${Search}</c:param>
+					<c:if test="${!empty Searchtext}"><c:param name="Searchtext">${Searchtext}</c:param></c:if>
+				</c:url>">이전</a>
 		       </c:if>
+				
 		      <c:forEach begin="${page.blockBegin}"  end="${page.blockEnd}" var="num">
 			      <c:choose> 
 			      <c:when test="${num eq page.curPage}">
 			         	    <span style="color: red">${num}</span>&nbsp;
 			      </c:when>
 			      <c:otherwise>
-			           <a href="#" onclick="page('${num}')">${num} </a>  &nbsp;
+			         <a href="<c:url value="?">
+					<c:param name="curPage">${num}</c:param>
+					<c:param name="Search">${Search}</c:param>
+					<c:if test="${!empty Searchtext}"><c:param name="Searchtext">${Searchtext}</c:param></c:if>
+				</c:url>">${num}</a>  &nbsp;
 			      </c:otherwise>
 			      </c:choose>
 		  </c:forEach>
 		       <c:if test="${page.curBlock<=page.totBlock}">
-		    		<a href="#" onclick="page('${page.nextPage}')">다음</a>
+		    		<a href="<c:url value="?">
+					<c:param name="curPage">${page.nextPage}</c:param>
+					<c:param name="Search">${Search}</c:param>
+					<c:if test="${!empty Searchtext}"><c:param name="Searchtext">${Searchtext}</c:param></c:if>
+				</c:url>">다음</a>
 		     </c:if>
 		     <c:if test="${page.curBlock <=page.totPage}">
-	  	        <a href="#" onclick="page('${page.totPage}')"> 끝 </a>
+	  	        <a href="<c:url value="?"> 
+					<c:param name="curPage">${page.totPage}</c:param>
+					<c:param name="Search">${Search}</c:param>
+					<c:if test="${!empty Searchtext}"><c:param name="Searchtext">${Searchtext}</c:param></c:if>
+				</c:url>"> 끝 </a>
 		     </c:if>
    </div>
-	
     
         </section><!-- #content end --> 
 

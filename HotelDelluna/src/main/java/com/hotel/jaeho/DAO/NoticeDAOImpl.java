@@ -55,4 +55,11 @@ public class NoticeDAOImpl implements NoticeDAO {
 	        
 		return sqlSession.selectOne(namespace+".SelectCount",map);
 	}
+	
+	@Override
+	public void NoticeDelete(int b_no) {
+		// TODO Auto-generated method stub
+		sqlSession.selectOne(namespace+".NoticeDelete",b_no);
+		
+	}
 }

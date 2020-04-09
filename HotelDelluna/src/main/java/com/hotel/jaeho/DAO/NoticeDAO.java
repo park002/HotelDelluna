@@ -17,4 +17,6 @@ public interface NoticeDAO {
 	
     public int SelectCount(String Search, String Searchtext);
     
+    public void NoticeDelete(int b_no);
+    
 }

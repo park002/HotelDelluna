@@ -163,83 +163,65 @@
 
                         <div id="contact-form-result" data-notify-type="success" data-notify-msg="<i class=icon-ok-sign></i> Message Sent Successfully!"></div>
 
-                   <!--      <form class="nobottommargin" id="template-contactform" name="template-contactform" action="sendemail.jsp" method="post"> -->
-                    <form class="nobottommargin" id="template-contactform"  action="<c:url value='/notice/Write'/>" method="post">
-                      
+                    <form class="nobottommargin" id="template-contactform"  action="<c:url value='/notice/WriteModifiy'/>" method="post">
                             <div class="form-process"></div>
                             
-                                    <div class="col_one_third">
+                               <div class="col_one_third">
                                  <label for="template-contactform-name">작성일 <small>*</small></label>
                                  <fmt:formatDate value="${dto.b_date}" pattern="yyyy-MM-dd" />
-                         		 </div>
+                              </div>
                          		 
                             <div class="col_one_third">
                                 <label for="template-contactform-name">관리자 <small>*</small></label>
                                <c:out value="${dto.b_writer}"/>
                             </div>
                             
-                       <%--      <div class="col_one_third">
-                                <label for="template-contactform-name">글 번호 <small>*</small></label>
-                               <c:out value="${dto.b_no}"/>
-                            </div>
-                         		 
-                        <div class="col_one_third">
-                              <label for="template-contactform-name">조회수 <small>*</small></label>
-                              <input type="text" id="template-contactform-name" name="b_count" value="${dto.b_count}"class="sm-form-control required" readonly="readonly"> 
-                       
-                            </div> --%>
-                            
-                   
-                      <!--       <div class="col_one_third">
-                                <label for="template-contactform-email">이메일 <small>*</small></label>
-                                <input type="email" id="template-contactform-email" name="template-contactform-email" value="" class="required email sm-form-control" disabled />
-                            </div> -->
-
-                         
-
+                              <font id="RemoveFont" color="red" size="2"> </font>
+                                    
                             <div class="clear"></div>
-
-                            <div class="col_two_third">
+                            <div class="col_two_third" id="Content_title">
                                 <label for="template-contactform-subject">제목 <small>*</small></label>
-                                <input type="text" id="template-contactform-subject" name="b_title" value="${dto.b_title}"  class="required sm-form-control"   maxlength="40" />
-                          
+                               
+                                <input type="text" id="template-contactform-subject" name="b_title" value="<c:out value="${dto.b_title}"/>"  class="required sm-form-control"   maxlength="40" />
                             </div>
-
-                            <!-- <div class="col_one_third col_last">
-                                <label for="template-contactform-service">질문유형</label>
-                                <select id="template-contactform-service" name="template-contactform-service" class="sm-form-control">
-                                    <option value="">-- Select One --</option>
-                                    <option value="Customer Service">고객 서비스</option>
-                                    <option value="Manager">매니저</option>
-                                    <option value="Advertising">Advertising</option>
-                                    <option value="Marketing">Marketing</option>
-                                </select>
-                            </div> -->
-
                             <div class="clear"></div>
-
-                            <div class="col_full">
+                            <div class="col_full" id="Content_detail">
                                 <label for="template-contactform-message">내용 <small>*</small></label>
-                                <textarea class="required sm-form-control" id="template-contactform-message" name="b_detail" rows="15" cols="30">
-                                <c:url value='${dto.b_detail}'/>
-                                </textarea>
+                                <textarea class="required sm-form-control" id="template-contactform-message" name="b_detail" rows="15" cols="30"><c:out value='${dto.b_detail}'/></textarea>
+                              
                             </div>
 
                             <!-- <div class="col_full hidden">
                                 <input type="text" id="template-contactform-botcheck" name="template-contactform-botcheck" value="" class="sm-form-control" />
                             </div> -->
-
-
+  							
                             <div class="col_full">
                                <!--  <button class="btn button nomargin"  id="template-contactform-submit" name="template-contactform-submit" value="submit">작성</button> -->
-                               <button type="button"  class="btn button nomargin"  id="template-contactform-submit" value="submit">수정</button>
-                                 <button type="button" class="btn button nomargin"  id="template-contactform-submit" value="submit">삭제</button>
-                                    <button type="button"  class="btn button nomargin"  id="template-contactform-submit" onclick="location.href='<c:url value="/notice/NoticeList"/>'">글 목록</button>
-                                       
+                               <button  class="btn button nomargin"  id="ContentModify" >수정</button>
+                                 <button type="button" class="btn button nomargin"  id="ContentRemove" onclick="NoticeDelete()" >삭제</button>
+                                    <button type="button"  class="btn button nomargin"  id="noticeList" onclick="location.href='<c:url value="/notice/NoticeList"/>'">글 목록</button>
                             </div>
-
                         </form>
-
+          
+	             		<script>
+              					function NoticeDelete() {
+              						if(confirm('정말 삭제 하시겠습니까?')) {
+              						$.ajax({
+              							type:'GET',
+              							url:'<c:url value="/notice/NoticeDelete"/>',
+              							data: {"b_no" : "${dto.b_no}"},
+              							success:function(result){
+              								$("#Content_title").hide();
+              								$("#Content_detail").hide();
+              								$("#ContentModify").hide();
+              								$("#ContentRemove").hide();
+              								$("#RemoveFont").html("NO."+result+"<br>정상적으로 삭제되었습니다.");              								
+              							}//success
+              						}); //ajax
+              					} //if
+              						else return false;
+              					}//function NoticeDelete
+            		   </script>
                       <!--   <script type="text/javascript">
 
                             $("#template-contactform").validate({

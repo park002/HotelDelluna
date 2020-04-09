@@ -50,5 +50,8 @@
 				    </if>
 		   		</trim>
 		</select>
+		<delete id="NoticeDelete" parameterType="int">
+		DELETE FROM notice WHERE b_no =#{b_no}
+		</delete>
 		
 </mapper>

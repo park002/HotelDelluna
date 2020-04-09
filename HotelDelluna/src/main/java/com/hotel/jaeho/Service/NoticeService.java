@@ -15,5 +15,8 @@ public interface NoticeService {
 	public NoticeDTO SelectNotice(int b_no);
 
 	public int SelectCount(String Search, String Searchtext);
+	
+	public void NoticeDelete(int b_no);
+	
 
 }
