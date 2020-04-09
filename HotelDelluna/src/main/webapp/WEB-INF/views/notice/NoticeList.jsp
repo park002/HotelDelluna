@@ -177,10 +177,9 @@
      <option value="TitleSearch" <c:if test="${Search eq 'TitleSearch'}"> selected</c:if>>제목</option>
      <option value="ContentSearch" <c:if test="${Search eq 'ContentSearch'}"> selected</c:if>>내용</option> --%>
      
-<%--      <c:if test="${m_id eq 'admin'}"> --%>
-            		<button type="button" class="well well-sm" onclick="location.href='<c:url value='/notice/NoticeWrite'/>'" 
-   		 value="글 작성" style="border-radius: 10px;">글 작성</button>
-   		<%--  </c:if> --%>
+    	<c:if test="${m_id eq 'admin'}"> 
+            		<button type="button" class="well well-sm" onclick="location.href='<c:url value='/notice/NoticeWrite'/>'" value="글 작성" style="border-radius: 10px;">글 작성</button>
+   		 </c:if> 
    		 
        <select name="Search" class="btn btn-secondary" >
 	       <option value="SearchSearch"<c:out value="${Search eq 'SearchSearch' ? 'selected':''}"/>>  글번호</option>

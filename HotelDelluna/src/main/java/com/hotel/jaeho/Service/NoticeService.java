@@ -18,5 +18,7 @@ public interface NoticeService {
 	
 	public void NoticeDelete(int b_no);
 	
+	public void NoticeModify(NoticeDTO dto);
+	
 
 }

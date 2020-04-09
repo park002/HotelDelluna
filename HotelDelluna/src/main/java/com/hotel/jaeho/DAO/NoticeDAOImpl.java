@@ -59,7 +59,13 @@ public class NoticeDAOImpl implements NoticeDAO {
 	@Override
 	public void NoticeDelete(int b_no) {
 		// TODO Auto-generated method stub
-		sqlSession.selectOne(namespace+".NoticeDelete",b_no);
+		sqlSession.delete(namespace+".NoticeDelete",b_no);
+		
+	}
+	@Override
+	public void NoticeModify(NoticeDTO dto) {
+		// TODO Auto-generated method stub
+		sqlSession.update(namespace+".NoticeModify",dto);
 		
 	}
 }

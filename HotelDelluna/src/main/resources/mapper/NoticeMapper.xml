@@ -50,8 +50,13 @@
 				    </if>
 		   		</trim>
 		</select>
+		
 		<delete id="NoticeDelete" parameterType="int">
 		DELETE FROM notice WHERE b_no =#{b_no}
 		</delete>
+		
+		<update id="NoticeModify" parameterType="NoticeDTO">
+		UPDATE notice SET b_title=#{b_title},b_detail=#{b_detail},b_date=now() WHERE b_no=#{b_no}
+		</update>
 		
 </mapper>

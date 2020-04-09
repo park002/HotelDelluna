@@ -163,8 +163,11 @@
 
                         <div id="contact-form-result" data-notify-type="success" data-notify-msg="<i class=icon-ok-sign></i> Message Sent Successfully!"></div>
 
-                    <form class="nobottommargin" id="template-contactform"  action="<c:url value='/notice/WriteModifiy'/>" method="post">
+                    <form class="nobottommargin" id="template-contactform"  action="<c:url value='/notice/WriteModifiy?b_no=${dto.b_no}&b_date=${dto.b_date}'/>" method="post">
                             <div class="form-process"></div>
+                               <div class="col_one_third">
+                                <label for="template-contactform-name">No <c:out value="${dto.b_no}"/><small>*</small></label>
+                            </div>
                             
                                <div class="col_one_third">
                                  <label for="template-contactform-name">작성일 <small>*</small></label>
@@ -178,32 +181,51 @@
                             
                               <font id="RemoveFont" color="red" size="2"> </font>
                                     
+                                  <c:choose>
+                                  <c:when test="${m_id eq 'admin'}">
                             <div class="clear"></div>
                             <div class="col_two_third" id="Content_title">
                                 <label for="template-contactform-subject">제목 <small>*</small></label>
-                               
-                                <input type="text" id="template-contactform-subject" name="b_title" value="<c:out value="${dto.b_title}"/>"  class="required sm-form-control"   maxlength="40" />
+                                <input type="text" id="template-contactform-subject" name="b_title" value="<c:out value="${dto.b_title}"/>"  class="required sm-form-control"  maxlength="40" />
                             </div>
                             <div class="clear"></div>
                             <div class="col_full" id="Content_detail">
                                 <label for="template-contactform-message">내용 <small>*</small></label>
-                                <textarea class="required sm-form-control" id="template-contactform-message" name="b_detail" rows="15" cols="30"><c:out value='${dto.b_detail}'/></textarea>
-                              
+                                <textarea class="required sm-form-control" id="template-contactform-message" name="b_detail" rows="15" cols="30" ><c:out value='${dto.b_detail}'/></textarea>
                             </div>
-
+                            </c:when>
+                            
+                            <c:otherwise>
+                             <div class="clear"></div>
+                            <div class="col_two_third" id="Content_title">
+                                <label for="template-contactform-subject">제목 <small>*</small></label>
+                                <input type="text" id="template-contactform-subject" name="b_title" value="<c:out value="${dto.b_title}"/>"  class="required sm-form-control"  readonly="readonly" maxlength="40" />
+                            </div>
+                            <div class="clear"></div>
+                            <div class="col_full" id="Content_detail">
+                                <label for="template-contactform-message">내용 <small>*</small></label>
+                                <textarea class="required sm-form-control" id="template-contactform-message" name="b_detail" rows="15" cols="30" readonly="readonly"><c:out value='${dto.b_detail}'/></textarea>
+                            </div>
+                            </c:otherwise>
+                            
+						</c:choose> 
                             <!-- <div class="col_full hidden">
                                 <input type="text" id="template-contactform-botcheck" name="template-contactform-botcheck" value="" class="sm-form-control" />
                             </div> -->
   							
                             <div class="col_full">
                                <!--  <button class="btn button nomargin"  id="template-contactform-submit" name="template-contactform-submit" value="submit">작성</button> -->
+                               <c:if test="${m_id eq 'admin'}">
                                <button  class="btn button nomargin"  id="ContentModify" >수정</button>
                                  <button type="button" class="btn button nomargin"  id="ContentRemove" onclick="NoticeDelete()" >삭제</button>
+                                 </c:if>
                                     <button type="button"  class="btn button nomargin"  id="noticeList" onclick="location.href='<c:url value="/notice/NoticeList"/>'">글 목록</button>
                             </div>
                         </form>
           
 	             		<script>
+	             		       
+	             		
               					function NoticeDelete() {
               						if(confirm('정말 삭제 하시겠습니까?')) {
               						$.ajax({

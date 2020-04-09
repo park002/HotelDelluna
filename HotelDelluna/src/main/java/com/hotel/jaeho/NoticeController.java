@@ -52,19 +52,19 @@ public class NoticeController {
 		mav.setViewName("/notice/NoticeContent");
 		return mav;
 	}
+	
 	@RequestMapping(value="/WriteModifiy",method = RequestMethod.POST)
 	public String WriteModifiy(NoticeDTO dto) {
-		System.out.println(dto.toString());
-		//b_title=99콘, b_detail=월드콘
+		service.NoticeModify(dto);
+		return "redirect:/notice/NoticeList";
 		
-		return null;
 	}
+	
 	
 	@ResponseBody
 	@RequestMapping(value="/NoticeDelete",method=RequestMethod.GET)
 	public int NoticeDelete(@RequestParam("b_no") int b_no) {
       service.NoticeDelete(b_no);
-	  
       return b_no;
 	
 	}
