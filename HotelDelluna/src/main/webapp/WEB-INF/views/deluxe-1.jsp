@@ -1,12 +1,13 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+	<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+	<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
-<html dir="ltr" lang="en-US">
+<html dir="ltr" lang="UTF-8">
 <head>
 
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-   <meta name="description" content="Bootstrap 3 Website Template" />
+	<meta name="description" content="Bootstrap 3 Website Template" />
 
     <!-- Stylesheets
     ============================================= -->
@@ -19,44 +20,21 @@
 	<link rel="stylesheet" href="<c:url value='/resources/css/font-icons.css'/>" type="text/css" />
 	<link rel="stylesheet" href="<c:url value='/resources/css/animate.css'/>" type="text/css" />
 	<link rel="stylesheet"  href="<c:url value='/resources/css/magnific-popup.css'/>"  type="text/css" />
-	<link rel="stylesheet"href="<c:url value='/resources/css/responsive.css'/>"  type="text/css" />
-	<link rel="stylesheet"  type="text/css" href="https://unpkg.com/vue-airbnb-style-datepicker@latest/dist/vue-airbnb-style-datepicker.min.css" />
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+	<link rel="stylesheet" href="<c:url value='/resources/css/responsive.css'/>"  type="text/css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <!--[if lt IE 9]>
-       <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+    	<script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
     <![endif]-->
 
     <!-- External JavaScripts
     ============================================= -->
-	   <script type="text/javascript" src="<c:url value='/resources/js/jquery.js'/>"></script>
-   <script type="text/javascript" src="<c:url value='/resources/js/plugins.js'/>"></script>
+	<script src="<c:url value='/resources/js/jquery.js'/>"> </script>
+	<script src="<c:url value='/resources/js/plugins.js'/>"> </script>
 
     <!-- Document Title
     ============================================= -->
-   <title>Hotel Delluna | Notice </title>
-<!-- <script language="JavaScript" src="script.js"></script> -->
+	<title>Hotel Delluna | Room - Deluxe Double</title>
 
-<style>
-   form{
-      margin: 0 auto;
-      width: 400px;
-   }
-   table{
-      margin: 0 auto;
-      width: 1300px;
-      border-top: 1px solid black;
-      border-collapse: collapse;
-   }
-   hr{
-      margin: 0 auto;
-      width: 1100px;
-   }
-     th, td {
-       border-bottom: 1px solid black;
-       padding: 18px;
-       text-align: center;
-      }
-</style>
 </head>
 
 <body class="stretched">
@@ -74,27 +52,26 @@
                 <div class="container clearfix">
 
                     <div id="primary-menu-trigger"><i class="icon-reorder"></i></div>
-
-                    <!-- Logo
+   <!-- Logo
                     ============================================= -->
-                  <div id="logo">
+                    <div id="logo">
                         <a href= "<c:url value='/'/>" class="standard-logo" data-dark-logo="<c:url value='/resources/images/logo/mainlogo.png'/>"><img src="<c:url value='/resources/images/logo/mainlogo.png'/>" alt="Chocolat Logo"></a>
                         <a href="<c:url value='/'/>" class="retina-logo" data-dark-logo="<c:url value='/resources/images/logo/mainlogo.png' />"><img src="<c:url value='/resources/images/logo/mainlogo.png'/>" alt="Chocolat Logo"></a>                   
-                    </div>
-
+                    </div><!-- #logo end -->
+                             
                     <!-- Primary Navigation
                     ============================================= -->
-                   <nav id="primary-menu">
+                     <nav id="primary-menu">
 
                         <ul class="">
-                            <li class="current"><a href="<c:url value="/hotel-About-Us"/>"><div>호텔소개</div></a>
+                            <li class><a href="<c:url value="/hotel-About-Us"/>"><div>호텔소개</div></a>
                                         <ul>                                
                                     		<li><a href="<c:url value="/hotel-About-Us"/>"><div>호텔소개</div></a></li>
                                     		<li><a href="<c:url value="/Location"/>"><div>호텔위치</div></a></li>
                                     		<li><a href="<c:url value='/notice/NoticeList'/>"><div>공지사항</div></a></li>
                                          </ul>                                                              
                             </li>
-                            <li><a href="#" onclick="return false;"><div>객실</div></a>
+                            <li class="current"><a href="#" onclick="return false;"><div>객실</div></a>
                                 <ul>
                                     <li><a href="<c:url value="/deluxe-1"/>"><div>디럭스</div></a>
                                         <ul>
@@ -161,130 +138,63 @@
         <section id="page-title" class="page-title-parallax" style="background-image: url('<c:url value="/resources/images/logo/room.PNG"/>'); padding: 120px 0;" data-stellar-background-ratio="0.3">
 
             <div class="container clearfix">
-                <FONT SIZE="6" COLOR="white">Hotel Delluna | 공지사항 </span></FONT>
+                <FONT SIZE="6" COLOR="white">Hotel Delluna | Deluxe Room</span></FONT>
                 <ol class="breadcrumb">
                 </ol>
-            </div><br>
-        </section><!-- #page-title end -->
+            </div>
 
+   	  </section><!-- #page-title end -->
 
-<br>
+        <!-- Content
+        ============================================= -->
+        <section id="content">
 
-<form action="<c:url value='/notice/NoticeList'/>">
+            <div class="content-wrap bgcolor-grey-light">
 
-     
-    	<c:if test="${m_id eq 'admin'}"> 
-            	<button type="button" class="well well-sm" onclick="location.href='<c:url value='/notice/NoticeWrite'/>'" 
-            	value="글 작성" style="border-radius: 10px;">글 작성</button>
-   		 </c:if> 
-   		 
-       <select name="Search" class="btn btn-secondary" >
-	       <option value="SearchSearch"<c:out value="${Search eq 'SearchSearch' ? 'selected':''}"/>>  글번호</option>
-		  <option value="TitleSearch"<c:out value="${Search eq 'TitleSearch' ? 'selected' : ''}"/>>제목</option>
-	      <option value="ContentSearch"<c:out value="${Search eq 'ContentSearch' ? 'selected' : ''}"/>>내용</option> 
-   </select>
-   
-		<input type="text" class="well well-sm" name="Searchtext" id="Searchtext" size="30" placeholder="검색을 통해 찾아보세요" 
-			 value="<c:out value="${Searchtext}"/>">&nbsp;
-		
-   		<button  value="검색" class="well well-sm">검색 </button>
-</form>
-<br>
+                <div class="container clearfix">
 
-<!-- ---------------------------------------------------------------------------------------------------- -->
-<!-- 게시글 없을때  -->
+                    <div class="nobottommargin clearfix">
 
-		<script>
-		//http://localhost:8090/jaeho/notice/NoticeList?curPage=2&Search=Search&
-		function page(curPage) {
-		 	<%-- /*location.href="?curPage="+curPage+"&Search=${Search}"+"&Searchtext=${Searchtext}" 
-		 	 location.href="<c:url value='/notice/NoticeList?curPage='+${}/>"*/ --%>
-			 location.href='<c:url value="?curPage='+curPage+'">
-						<c:param name="Search">${Search}</c:param>
-						<c:if test="${!empty Searchtext}"><c:param name="Searchtext">${Searchtext}</c:param></c:if>
-					</c:url>'
-				 	
-					 
-			location.href='?curPage='+curPage+'&Search=${Search}&Searchtext=${Searchtext}';
-		 	 <%-- /*  location.href="<c:url value='/notice/NoticeList?curPage='+curPage/>" */  --%>
-		}
-		
-		
-		
-		$(document).on('click', 'a[href="#"]', function(e){
-			e.preventDefault();
-		});
-		
-		
-		</script>
-		<table>
-			<tr>
-			<th>NO</th>
-			<th>제목</th>
-			<th>작성일</th>
-			<th>조회수</th>
-			</tr>
-			
-		<c:forEach items="${list}" var="NoticeList"> 
-			<tr>
-				      <td><c:out value="${NoticeList.b_no}"/> </td>
-				   <td> <a href ="<c:url value='/notice/NoticeContent?b_no=${NoticeList.b_no}'/>"><c:out value="${NoticeList.b_title}"/> </a></td>
-				      <td> <fmt:formatDate value="${NoticeList.b_date}" pattern="yyyy-MM-dd"/></td>
-				      <td><c:out value="${NoticeList.b_count}"/> </td>
-		      </tr>
-		</c:forEach>
-	      </table>
-	      <br>
-	  <!--     <a href="#" onclick="page(2)">asasdasdda </a> -->
-	<!-- //http://localhost:8090/jaeho/notice/NoticeList?curPage=2&Search=Search& -->
-	 <!--  //http://locatlhost:8090/jaeho/notice/noticeList?curPage=1&Search=Search -->
-	 
- 	<div id="paging" style="text-align:center"> 
-		  <c:if test="${1<page.curBlock}">
-		<a href="<c:url value="?">
-					<c:param name="curPage">1</c:param>
-					<c:param name="Search">${Search}</c:param>
-					<c:if test="${!empty Searchtext}"><c:param name="Searchtext">${Searchtext}</c:param></c:if>
-				</c:url>">처음</a> 
-		 </c:if>
-		      <c:if test="${1<page.curBlock}">
-		        <a href="<c:url value="?">
-					<c:param name="curPage">${page.prevPage}</c:param>
-					<c:param name="Search">${Search}</c:param>
-					<c:if test="${!empty Searchtext}"><c:param name="Searchtext">${Searchtext}</c:param></c:if>
-				</c:url>">이전</a>
-		       </c:if>
-				
-		      <c:forEach begin="${page.blockBegin}"  end="${page.blockEnd}" var="num">
-			      <c:choose> 
-			      <c:when test="${num eq page.curPage}">
-			         	    <span style="color: red">${num}</span>&nbsp;
-			      </c:when>
-			      <c:otherwise>
-			         <a href="<c:url value="?">
-					<c:param name="curPage">${num}</c:param>
-					<c:param name="Search">${Search}</c:param>
-					<c:if test="${!empty Searchtext}"><c:param name="Searchtext">${Searchtext}</c:param></c:if>
-				</c:url>">${num}</a>  &nbsp;
-			      </c:otherwise>
-			      </c:choose>
-		  </c:forEach>
-		       <c:if test="${page.curBlock<=page.totBlock}">
-		    		<a href="<c:url value="?">
-					<c:param name="curPage">${page.nextPage}</c:param>
-					<c:param name="Search">${Search}</c:param>
-					<c:if test="${!empty Searchtext}"><c:param name="Searchtext">${Searchtext}</c:param></c:if>
-				</c:url>">다음</a>
-		     </c:if>
-		     <c:if test="${page.curBlock <=page.totPage}">
-	  	        <a href="<c:url value="?"> 
-					<c:param name="curPage">${page.totPage}</c:param>
-					<c:param name="Search">${Search}</c:param>
-					<c:if test="${!empty Searchtext}"><c:param name="Searchtext">${Searchtext}</c:param></c:if>
-				</c:url>"> 끝 </a>
-		     </c:if>
-   </div>
-    
+                        <div class="nobottommargin">
+
+                            <div class="clearfix">
+
+                                <h2>디럭스 더블(Deluxe Double)</h2>
+                               <p>
+                               <a href="<c:url value='/reservation/r'/>" class="btn btn-primary" role="button">예약하기</a>
+                               <a href="<c:url value="/contact-1"/>" class="btn btn-primary" role="button">문의하기</a>
+                                </p>
+                               <div class="entry clearfix">
+                                <div class="entry-image">
+                                    <div class="fslider" data-arrows="false" data-lightbox="gallery">
+                                        <div class="flexslider">
+                                            <div class="slider-wrap">
+                                                <div class="slide"><a href="<c:url value="/resources/images/logo/room-1.PNG"/>" data-lightbox="gallery-item"><img class="image_fade" src="<c:url value="/resources/images/logo/room-1.PNG"/>" alt=""></a></div>
+                                                <div class="slide"><a href="<c:url value="/resources/images/logo/room-2.PNG"/>" data-lightbox="gallery-item"><img class="image_fade" src="<c:url value="/resources/images/logo/room-2.PNG"/>" alt=""></a></div>
+                                                <div class="slide"><a href="<c:url value="/resources/images/logo/room-3.PNG"/>" data-lightbox="gallery-item"><img class="image_fade" src="<c:url value="/resources/images/logo/room-3.PNG"/>" alt=""></a></div>
+                                                <div class="slide"><a href="<c:url value="/resources/images/logo/room-4.PNG"/>" data-lightbox="gallery-item"><img class="image_fade" src="<c:url value="/resources/images/logo/room-4.PNG"/>" alt=""></a></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>                 
+                               </div>
+                                <div class="topmargin-sm">
+								
+                                    <h3>객실개요</h3><p> 
+                                    침대 타입 : 더블침대 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 체크인/체크아웃 : 14:00 / 11:00<br>
+                                    최대 수용인원 : 2명 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 전망 : 마운틴 뷰
+									<hr style="border: solid 1px navy;">
+                              		<h3>서비스</h3><p> 
+                                    &middot; 제주도의 아름다운 전망(마운틴 뷰)<p>
+                                    &middot; Spa & Garden 해온: 사계절 야외수영장 및 자쿠지, 사우나<br>
+                                    &middot; 해온(he:on) 베딩 시스템: 최상의 숙면을 위한 침대 및 침구류<br>
+                                    &middot; 전 객실 초고속 무료 인터넷 (유선, 와이파이)
+									<hr style="border: solid 1px navy;">
+                              		<h3>어메니티</h3><p> 
+                                    일반 : 55" LCD TV / 발코니 / 손전등 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 욕실 : 욕실용품(몰튼브라운) / 비데 / 면도기 / 목욕 가운 / 헤어드라이어<br>
+                                    기타 : 케이블,위성 TV채널 / 무료 생수 1일 3병 / 무료 차(Tea) 서비스 제공
+                                    <hr style="border: solid 1px navy;">
+                                  	
         </section><!-- #content end --> 
 
         <!-- Footer
@@ -305,12 +215,13 @@
                             <p>63535, 제주특별자치도 서귀포시 중문관광로 72번길, 호텔 델루나.</p>
 
                             <div class="line" style="margin: 30px 0;"></div>
-                           <div class="col_half">
+
+                            <div class="col_half">
                                 <div class="widget subscribe-widget clearfix">
                                     <h5>Email : hoteldelluna@hoteldelluna.co.kr
                                     <div id="widget-subscribe-form-result" data-notify-type="success" data-notify-msg=""></div>
                                     <form id="widget-subscribe-form" action="include/subscribe.php" role="form" method="post" class="nobottommargin">
-                          
+  								
                                     </form>
                                     <script type="text/javascript">
                                         $("#widget-subscribe-form").validate({
@@ -330,9 +241,6 @@
                                     </script>
                                 </div>                            
                             </div>
-                            <div class="col_half">
-                                </div>                            
-                            </div>
 
                             <div class="col_half col_last">
                                 <div class="widget clearfix">
@@ -341,7 +249,7 @@
 
                                     <div class="col-md-6 bottommargin-sm">
 
-                                     <div class="widget_links clearfix">
+                            			<div class="widget_links clearfix">
                                 			<ul>
                                     		<li><a href="<c:url value='/'/>"><div>메인</div></a></li>
                                     		<li><a href="<c:url value='/notice/NoticeList'/>"><div>공지사항</div></a></li>
@@ -356,13 +264,13 @@
 
                             			<div class="widget_links clearfix">
                                 			<ul>
-                                    			              			<li><a href="<c:url value="/deluxe-1"/>"><div>객실 - 디럭스</div></a></li>
+                                    				<li><a href="<c:url value="/deluxe-1"/>"><div>객실 - 디럭스</div></a></li>
                                     			<li><a href="<c:url value="/suite-1"/>"><div>객실 - 스위트</div></a></li>
                                     			<li><a href="<c:url value="/dining-1"/>"><div>다이닝</div></a></li>
                                     			<li><a href="<c:url value='/reservation/r'/>"><div>예약하기</div></a></li>
                                                 <li><a href="<c:url value='/reservation/ReservationSelect'/>"><div>예약조회 및 취소</div></a></li>
                                 			</ul>
-                                     </div>
+                            			</div>
                                     </div>
                                 </div>
                             </div>
@@ -400,7 +308,8 @@
 
             <!-- Copyrights
             ============================================= -->
-                <div id="copyrights">
+   <div id="copyrights">
+
                 <div class="container clearfix">
 
                     <div class="col_half">
@@ -417,7 +326,6 @@
                                <a href="<c:url value='/reservation/ReservationSelect'/>">예약조회 및 취소</a>
                                 <a href="<c:url value="/contact-1"/>">고객의 소리</a>
                         </div>
-                        
                         <div class="fright clearfix">
                             <a href="https://www.facebook.com/" class="social-icon si-small si-borderless nobottommargin si-facebook">
                                 <i class="icon-facebook"></i>
@@ -439,9 +347,13 @@
                             </a>
                         </div>
                     </div>
+
                 </div>
+
             </div><!-- #copyrights end -->
+
         </footer><!-- #footer end -->
+
     </div><!-- #wrapper end -->
 
     <!-- Go To Top

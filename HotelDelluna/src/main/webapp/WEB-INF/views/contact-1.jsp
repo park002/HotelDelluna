@@ -1,16 +1,17 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+    	<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+	<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
-<html dir="ltr" lang="en-US">
+<html dir="ltr" lang="UTF-8">
 <head>
 
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-   <meta name="description" content="Bootstrap 3 Website Template" />
+	<meta name="description" content="Bootstrap 3 Website Template" />
 
-    <!-- Stylesheets
+    <!-- Stylesheets 고객의소리
     ============================================= -->
-    <link rel="icon" type="image/png" sizes="16x16" href="<c:url value='/resources/images/favicon/favicon-16x16.png' />">
+	 <link rel="icon" type="image/png" sizes="16x16" href="<c:url value='/resources/images/favicon/favicon-16x16.png' />">
 	<link rel="icon" type="image/png" sizes="32x32" href="<c:url value='/resources/images/favicon/favicon-32x32.png'/>">
 	<link href="http://fonts.googleapis.com/css?family=PT+Sans:300,400,500,600,700" rel="stylesheet" type="text/css" />
 	<link rel="stylesheet" href="<c:url value='/resources/css/bootstrap.css'/>" type="text/css" />
@@ -20,43 +21,20 @@
 	<link rel="stylesheet" href="<c:url value='/resources/css/animate.css'/>" type="text/css" />
 	<link rel="stylesheet"  href="<c:url value='/resources/css/magnific-popup.css'/>"  type="text/css" />
 	<link rel="stylesheet"href="<c:url value='/resources/css/responsive.css'/>"  type="text/css" />
-	<link rel="stylesheet"  type="text/css" href="https://unpkg.com/vue-airbnb-style-datepicker@latest/dist/vue-airbnb-style-datepicker.min.css" />
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <!--[if lt IE 9]>
-       <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+    	<script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
     <![endif]-->
-
     <!-- External JavaScripts
     ============================================= -->
-	   <script type="text/javascript" src="<c:url value='/resources/js/jquery.js'/>"></script>
-   <script type="text/javascript" src="<c:url value='/resources/js/plugins.js'/>"></script>
+	<script src="<c:url value='/resources/js/jquery.js'/>"> </script>
+	<script src="<c:url value='/resources/js/plugins.js'/>"> </script>
+
 
     <!-- Document Title
     ============================================= -->
-   <title>Hotel Delluna | Notice </title>
-<!-- <script language="JavaScript" src="script.js"></script> -->
+	<title>Hotel Delluna</title>
 
-<style>
-   form{
-      margin: 0 auto;
-      width: 400px;
-   }
-   table{
-      margin: 0 auto;
-      width: 1300px;
-      border-top: 1px solid black;
-      border-collapse: collapse;
-   }
-   hr{
-      margin: 0 auto;
-      width: 1100px;
-   }
-     th, td {
-       border-bottom: 1px solid black;
-       padding: 18px;
-       text-align: center;
-      }
-</style>
 </head>
 
 <body class="stretched">
@@ -77,20 +55,20 @@
 
                     <!-- Logo
                     ============================================= -->
-                  <div id="logo">
+                <div id="logo">
                         <a href= "<c:url value='/'/>" class="standard-logo" data-dark-logo="<c:url value='/resources/images/logo/mainlogo.png'/>"><img src="<c:url value='/resources/images/logo/mainlogo.png'/>" alt="Chocolat Logo"></a>
                         <a href="<c:url value='/'/>" class="retina-logo" data-dark-logo="<c:url value='/resources/images/logo/mainlogo.png' />"><img src="<c:url value='/resources/images/logo/mainlogo.png'/>" alt="Chocolat Logo"></a>                   
-                    </div>
+                    </div><!-- #logo end -->
 
-                    <!-- Primary Navigation
+                                      <!-- Primary Navigation
                     ============================================= -->
-                   <nav id="primary-menu">
+                  <nav id="primary-menu">
 
                         <ul class="">
-                            <li class="current"><a href="<c:url value="/hotel-About-Us"/>"><div>호텔소개</div></a>
+                            <li ><a href="<c:url value="/hotel-About-Us"/>"><div>호텔소개</div></a>
                                         <ul>                                
-                                    		<li><a href="<c:url value="/hotel-About-Us"/>"><div>호텔소개</div></a></li>
-                                    		<li><a href="<c:url value="/Location"/>"><div>호텔위치</div></a></li>
+                                    		<li><a href=<c:url value="/hotel-About-Us"/>><div>호텔소개</div></a></li>
+                                    		<li><a href=<c:url value="/Location"/>><div>호텔위치</div></a></li>
                                     		<li><a href="<c:url value='/notice/NoticeList'/>"><div>공지사항</div></a></li>
                                          </ul>                                                              
                             </li>
@@ -124,7 +102,7 @@
                             		<li><a href="<c:url value="/menu-item3"/>"><div>프라이빗 카바나</div></a></li>
                                 </ul>
                             </li>
-                            <li><a href="<c:url value="/contact-1"/>"><div>고객의 소리</div></a></li>
+                            <li class="current"><a href="<c:url value="/contact-1"/>"><div>고객의 소리</div></a></li>
                             <c:choose>
 	                            <c:when test="${m_id ne null}">
 		                            <li><a href="<c:url value='/reservation/r'/>"><div>예약하기</div></a></li>   
@@ -156,136 +134,144 @@
 
         </header><!-- #header end -->    
         
-        <!-- Page Title
+        <!-- Page Title 배경
         ============================================= -->
-        <section id="page-title" class="page-title-parallax" style="background-image: url('<c:url value="/resources/images/logo/room.PNG"/>'); padding: 120px 0;" data-stellar-background-ratio="0.3">
+        
 
-            <div class="container clearfix">
-                <FONT SIZE="6" COLOR="white">Hotel Delluna | 공지사항 </span></FONT>
-                <ol class="breadcrumb">
-                </ol>
-            </div><br>
-        </section><!-- #page-title end -->
+          
 
+        <!-- #page-title end -->        
 
-<br>
+        <!-- Google Map
+        ============================================= -->
+      
+        <!-- Content
+        ============================================= -->
+        <section id="content">
 
-<form action="<c:url value='/notice/NoticeList'/>">
+            <div class="section content-wrap notopmargin nobottommargin bgcolor-grey">
 
-     
-    	<c:if test="${m_id eq 'admin'}"> 
-            	<button type="button" class="well well-sm" onclick="location.href='<c:url value='/notice/NoticeWrite'/>'" 
-            	value="글 작성" style="border-radius: 10px;">글 작성</button>
-   		 </c:if> 
-   		 
-       <select name="Search" class="btn btn-secondary" >
-	       <option value="SearchSearch"<c:out value="${Search eq 'SearchSearch' ? 'selected':''}"/>>  글번호</option>
-		  <option value="TitleSearch"<c:out value="${Search eq 'TitleSearch' ? 'selected' : ''}"/>>제목</option>
-	      <option value="ContentSearch"<c:out value="${Search eq 'ContentSearch' ? 'selected' : ''}"/>>내용</option> 
-   </select>
-   
-		<input type="text" class="well well-sm" name="Searchtext" id="Searchtext" size="30" placeholder="검색을 통해 찾아보세요" 
-			 value="<c:out value="${Searchtext}"/>">&nbsp;
-		
-   		<button  value="검색" class="well well-sm">검색 </button>
-</form>
-<br>
+                <div class="container clearfix">
 
-<!-- ---------------------------------------------------------------------------------------------------- -->
-<!-- 게시글 없을때  -->
+                    <!-- Postcontent
+                    ============================================= -->
+                    <div class="postcontent nobottommargin">
 
-		<script>
-		//http://localhost:8090/jaeho/notice/NoticeList?curPage=2&Search=Search&
-		function page(curPage) {
-		 	<%-- /*location.href="?curPage="+curPage+"&Search=${Search}"+"&Searchtext=${Searchtext}" 
-		 	 location.href="<c:url value='/notice/NoticeList?curPage='+${}/>"*/ --%>
-			 location.href='<c:url value="?curPage='+curPage+'">
-						<c:param name="Search">${Search}</c:param>
-						<c:if test="${!empty Searchtext}"><c:param name="Searchtext">${Searchtext}</c:param></c:if>
-					</c:url>'
-				 	
-					 
-			location.href='?curPage='+curPage+'&Search=${Search}&Searchtext=${Searchtext}';
-		 	 <%-- /*  location.href="<c:url value='/notice/NoticeList?curPage='+curPage/>" */  --%>
-		}
-		
-		
-		
-		$(document).on('click', 'a[href="#"]', function(e){
-			e.preventDefault();
-		});
-		
-		
-		</script>
-		<table>
-			<tr>
-			<th>NO</th>
-			<th>제목</th>
-			<th>작성일</th>
-			<th>조회수</th>
-			</tr>
-			
-		<c:forEach items="${list}" var="NoticeList"> 
-			<tr>
-				      <td><c:out value="${NoticeList.b_no}"/> </td>
-				   <td> <a href ="<c:url value='/notice/NoticeContent?b_no=${NoticeList.b_no}'/>"><c:out value="${NoticeList.b_title}"/> </a></td>
-				      <td> <fmt:formatDate value="${NoticeList.b_date}" pattern="yyyy-MM-dd"/></td>
-				      <td><c:out value="${NoticeList.b_count}"/> </td>
-		      </tr>
-		</c:forEach>
-	      </table>
-	      <br>
-	  <!--     <a href="#" onclick="page(2)">asasdasdda </a> -->
-	<!-- //http://localhost:8090/jaeho/notice/NoticeList?curPage=2&Search=Search& -->
-	 <!--  //http://locatlhost:8090/jaeho/notice/noticeList?curPage=1&Search=Search -->
-	 
- 	<div id="paging" style="text-align:center"> 
-		  <c:if test="${1<page.curBlock}">
-		<a href="<c:url value="?">
-					<c:param name="curPage">1</c:param>
-					<c:param name="Search">${Search}</c:param>
-					<c:if test="${!empty Searchtext}"><c:param name="Searchtext">${Searchtext}</c:param></c:if>
-				</c:url>">처음</a> 
-		 </c:if>
-		      <c:if test="${1<page.curBlock}">
-		        <a href="<c:url value="?">
-					<c:param name="curPage">${page.prevPage}</c:param>
-					<c:param name="Search">${Search}</c:param>
-					<c:if test="${!empty Searchtext}"><c:param name="Searchtext">${Searchtext}</c:param></c:if>
-				</c:url>">이전</a>
-		       </c:if>
+                        <h3>고객의 소리</h3>
+
+                        <div id="contact-form-result" data-notify-type="success" data-notify-msg="<i class=icon-ok-sign></i> Message Sent Successfully!"></div>
+
+                        <form class="nobottommargin" id="template-contactform" name="template-contactform" action="sendemail.jsp" method="post">
+
+                            <div class="form-process"></div>
+
+                            <div class="col_one_third">
+                                <label for="template-contactform-name">성함 <small>*</small></label>
+                                <input type="text" id="template-contactform-name" name="template-contactform-name" value="" class="sm-form-control required" disabled/>
+                            </div>
+
+                            <div class="col_one_third">
+                                <label for="template-contactform-email">이메일 <small>*</small></label>
+                                <input type="email" id="template-contactform-email" name="template-contactform-email" value="" class="required email sm-form-control" disabled />
+                            </div>
+
+                         
+
+                            <div class="clear"></div>
+
+                            <div class="col_two_third">
+                                <label for="template-contactform-subject">제목 <small>*</small></label>
+                                <input type="text" id="template-contactform-subject" name="template-contactform-subject" value="" class="required sm-form-control" />
+                            </div>
+
+                            <div class="col_one_third col_last">
+                                <label for="template-contactform-service">질문유형</label>
+                                <select id="template-contactform-service" name="template-contactform-service" class="sm-form-control">
+                                    <option value="">-- Select One --</option>
+                                    <option value="Customer Service">고객 서비스</option>
+                                    <option value="Manager">매니저</option>
+                                    <option value="Advertising">Advertising</option>
+                                    <option value="Marketing">Marketing</option>
+                                </select>
+                            </div>
+
+                            <div class="clear"></div>
+
+                            <div class="col_full">
+                                <label for="template-contactform-message">작성 <small>*</small></label>
+                                <textarea class="required sm-form-control" id="template-contactform-message" name="template-contactform-message" rows="6" cols="30"></textarea>
+                            </div>
+
+                            <div class="col_full hidden">
+                                <input type="text" id="template-contactform-botcheck" name="template-contactform-botcheck" value="" class="sm-form-control" />
+                            </div>
+
+                            <div class="col_full">
+                                <button class="btn button nomargin" type="submit" id="template-contactform-submit" name="template-contactform-submit" value="submit">접수</button>
+                            </div>
+
+                        </form>
+
+                        <script type="text/javascript">
+
+                            $("#template-contactform").validate({
+                                submitHandler: function(form) {
+                                    $('.form-process').fadeIn();
+                                    $(form).ajaxSubmit({
+                                        target: '#contact-form-result',
+                                        success: function() {
+                                            $('.form-process').fadeOut();
+                                            $('#template-contactform').find('.sm-form-control').val('');
+                                            $('#contact-form-result').attr('data-notify-msg', $('#contact-form-result').html()).html('');
+                                            IGNITE.widget.notifications($('#contact-form-result'));
+                                        }
+                                    });
+                                }
+                            });
+
+                        </script>
+
+                    </div><!-- .postcontent end -->
 				
-		      <c:forEach begin="${page.blockBegin}"  end="${page.blockEnd}" var="num">
-			      <c:choose> 
-			      <c:when test="${num eq page.curPage}">
-			         	    <span style="color: red">${num}</span>&nbsp;
-			      </c:when>
-			      <c:otherwise>
-			         <a href="<c:url value="?">
-					<c:param name="curPage">${num}</c:param>
-					<c:param name="Search">${Search}</c:param>
-					<c:if test="${!empty Searchtext}"><c:param name="Searchtext">${Searchtext}</c:param></c:if>
-				</c:url>">${num}</a>  &nbsp;
-			      </c:otherwise>
-			      </c:choose>
-		  </c:forEach>
-		       <c:if test="${page.curBlock<=page.totBlock}">
-		    		<a href="<c:url value="?">
-					<c:param name="curPage">${page.nextPage}</c:param>
-					<c:param name="Search">${Search}</c:param>
-					<c:if test="${!empty Searchtext}"><c:param name="Searchtext">${Searchtext}</c:param></c:if>
-				</c:url>">다음</a>
-		     </c:if>
-		     <c:if test="${page.curBlock <=page.totPage}">
-	  	        <a href="<c:url value="?"> 
-					<c:param name="curPage">${page.totPage}</c:param>
-					<c:param name="Search">${Search}</c:param>
-					<c:if test="${!empty Searchtext}"><c:param name="Searchtext">${Searchtext}</c:param></c:if>
-				</c:url>"> 끝 </a>
-		     </c:if>
-   </div>
-    
-        </section><!-- #content end --> 
+                    <!-- Sidebar
+                    ============================================= -->
+                    <div class="sidebar col_last nobottommargin">
+
+                        <address>
+                            <strong>Address:</strong><br>
+                           63535, 제주특별자치도 서귀포시 중문관광로 72번길, 호텔 델루나.
+                        </address>
+                        <strong>Phone:</strong> (341) 457 432678<br>
+                        <strong>Fax:</strong> (341) 457 538478<br>
+                     
+                        <div class="widget noborder notoppadding">
+                        	  <a href="https://www.facebook.com/" class="social-icon si-small si-borderless nobottommargin si-facebook">
+                                <i class="icon-facebook"></i>
+                                <i class="icon-facebook"></i>
+                            </a>
+
+                            <a href="https://twitter.com/explore" class="social-icon si-small si-borderless nobottommargin si-twitter">
+                                <i class="icon-twitter"></i>
+                                <i class="icon-twitter"></i>
+                            </a>
+                            <a href="https://github.com/park002" class="social-icon si-small si-borderless nobottommargin si-github">
+                                <i class="icon-github"></i>
+                                <i class="icon-github"></i>
+                            </a>
+
+                            <a href="https://www.yahoo.com/" class="social-icon si-small si-borderless nobottommargin si-yahoo">
+                                <i class="icon-yahoo"></i>
+                                <i class="icon-yahoo"></i>
+                            </a>
+                        </div>                        
+
+                    </div><!-- .sidebar end -->
+
+                </div>
+
+            </div>
+
+        </section><!-- #content end -->
 
         <!-- Footer
         ============================================= -->
@@ -305,12 +291,13 @@
                             <p>63535, 제주특별자치도 서귀포시 중문관광로 72번길, 호텔 델루나.</p>
 
                             <div class="line" style="margin: 30px 0;"></div>
-                           <div class="col_half">
+
+                            <div class="col_half">
                                 <div class="widget subscribe-widget clearfix">
                                     <h5>Email : hoteldelluna@hoteldelluna.co.kr
                                     <div id="widget-subscribe-form-result" data-notify-type="success" data-notify-msg=""></div>
                                     <form id="widget-subscribe-form" action="include/subscribe.php" role="form" method="post" class="nobottommargin">
-                          
+  								
                                     </form>
                                     <script type="text/javascript">
                                         $("#widget-subscribe-form").validate({
@@ -330,10 +317,6 @@
                                     </script>
                                 </div>                            
                             </div>
-                            <div class="col_half">
-                                </div>                            
-                            </div>
-
                             <div class="col_half col_last">
                                 <div class="widget clearfix">
 
@@ -341,13 +324,13 @@
 
                                     <div class="col-md-6 bottommargin-sm">
 
-                                     <div class="widget_links clearfix">
+                            			<div class="widget_links clearfix">
                                 			<ul>
-                                    		<li><a href="<c:url value='/'/>"><div>메인</div></a></li>
-                                    		<li><a href="<c:url value='/notice/NoticeList'/>"><div>공지사항</div></a></li>
-                                    		<li><a href="<c:url value="/hotel-About-Us"/>"><div>호텔소개</div></a></li>
-                                    		<li><a href="<c:url value="/Location"/>"><div>호텔위치</div></a></li>
-                                            <li><a href="<c:url value="/contact-1"/>"><div>고객의 소리</div></a></li>
+                                    			<li><a href="<c:url value="/"/>"><div>메인</div></a></li>
+                                    			<li><a href="<c:url value='/notice/NoticeList'/>"><div>공지사항</div></a></li>
+                                    			<li><a href="<c:url value="/hotel-About-Us"/>"><div>호텔소개</div></a></li>
+                                    			<li><a href="<c:url value="/Location"/>"><div>호텔위치</div></a></li>
+                                                <li><a href="<c:url value="/contact-1"/>"><div>고객의 소리</div></a></li>
                                 			</ul>
                             			</div>
                                     </div>
@@ -356,13 +339,13 @@
 
                             			<div class="widget_links clearfix">
                                 			<ul>
-                                    			              			<li><a href="<c:url value="/deluxe-1"/>"><div>객실 - 디럭스</div></a></li>
+                                    			<li><a href="<c:url value="/deluxe-1"/>"><div>객실 - 디럭스</div></a></li>
                                     			<li><a href="<c:url value="/suite-1"/>"><div>객실 - 스위트</div></a></li>
                                     			<li><a href="<c:url value="/dining-1"/>"><div>다이닝</div></a></li>
                                     			<li><a href="<c:url value='/reservation/r'/>"><div>예약하기</div></a></li>
                                                 <li><a href="<c:url value='/reservation/ReservationSelect'/>"><div>예약조회 및 취소</div></a></li>
                                 			</ul>
-                                     </div>
+                            			</div>
                                     </div>
                                 </div>
                             </div>
@@ -376,8 +359,8 @@
                             <h4>Hours</h4>
                         </div>
                         <ul class="nobottommargin nobullets">
-                            <li><strong>호텔서비스.</strong><br>00:00 ~ 24:00</li><br>
-                            <li><strong>객실예약(주중)안내.</strong><br>전화예약 09:00 ~ 18:00</li><p>온라인예약 00:00 ~ 24:00<br>
+                            <li><strong>호텔서비스</strong><br>00:00 ~ 24:00</li><br>
+                            <li><strong>객실예약(주중)</strong><br>09:00 ~ 18:00</li><br>
                             <li>업무시간 외에는<br> 온라인 예약을 이용해주시기 바랍니다.</li>
                         </ul>
                         </div>
@@ -400,26 +383,22 @@
 
             <!-- Copyrights
             ============================================= -->
-                <div id="copyrights">
+            <div id="copyrights">
+
                 <div class="container clearfix">
 
                     <div class="col_half">
-                        <img src="<c:url value='/resources/images/logo/footer-logo.png'/>" alt="" class="footer-logo standard-logo">
-                        <img src="<c:url value='/resources/images/logo/footer-logo-large.png' />" alt="" class="footer-logo retina-logo">
+                        <img src="images/logo/footer-logo.png" alt="" class="footer-logo standard-logo">
+                        <img src="images/logo/footer-logo-large.png" alt="" class="footer-logo retina-logo">
                         Copyright &copy; 2020 Hotel Delluna. All Rights Reserved.
                     </div>
 
                     <div class="col_half col_last tright">
                         <div class="copyrights-menu copyright-links fright clearfix">
-                            <a href="<c:url value='/notice/NoticeList'/>">공지사항</a>
-                             <a href="<c:url value="/hotel-About-Us"/>">호텔소개</a>
-                              <a href="<c:url value="/deluxe-1"/>">객실</a>
-                               <a href="<c:url value='/reservation/ReservationSelect'/>">예약조회 및 취소</a>
-                                <a href="<c:url value="/contact-1"/>">고객의 소리</a>
+                            <a href="#">공지사항</a> <a href="hotel-About-Us.html">호텔소개</a> <a href="deluxe-1.html">객실</a> <a href="contact-2.jsp">예약조회 및 취소</a> <a href="contact-1.jsp">고객의 소리</a>
                         </div>
-                        
                         <div class="fright clearfix">
-                            <a href="https://www.facebook.com/" class="social-icon si-small si-borderless nobottommargin si-facebook">
+                         <a href="https://www.facebook.com/" class="social-icon si-small si-borderless nobottommargin si-facebook">
                                 <i class="icon-facebook"></i>
                                 <i class="icon-facebook"></i>
                             </a>
@@ -439,9 +418,13 @@
                             </a>
                         </div>
                     </div>
+
                 </div>
+
             </div><!-- #copyrights end -->
+
         </footer><!-- #footer end -->
+
     </div><!-- #wrapper end -->
 
     <!-- Go To Top
@@ -450,7 +433,7 @@
 
     <!-- Footer Scripts
     ============================================= -->
-    <script type="text/javascript" src="<c:url value='/resources/js/functions.js'/>"></script>
+    <script type="text/javascript" src="<c:url value="/resources/js/functions.js"/>"></script>
 
 </body>
 </html>

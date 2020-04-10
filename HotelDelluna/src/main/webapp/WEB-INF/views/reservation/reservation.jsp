@@ -99,75 +99,82 @@
 				<div id="primary-menu-trigger">
 					<i class="icon-reorder"></i>
 	</div>
-				<!-- Logo============================================= -->
-		<div id="logo">
-			<a href="index.do" class="standard-logo" data-dark-logo= "<c:url value='/resources/images/logo/logo-dark.png'/>">
-		<img src="<c:url value='/resources/images/logo/footer-logo-large.png' />" alt="Chocolat Logo"></a>
-		<a href="index.do" class="retina-logo" data-dark-logo="<c:url value='/resources/images/logo/logo-dark-large.png' />">
-				<img src="/jaeho/resources/images/logo/footer-logo-large.png" alt="Chocolat Logo"></a>
-		</div>
-	<!-- #logo end -->
+		   <!-- Logo
+                    ============================================= -->
+                    <div id="logo">
+                        <a href= "<c:url value='/'/>" class="standard-logo" data-dark-logo="<c:url value='/resources/images/logo/mainlogo.png'/>"><img src="<c:url value='/resources/images/logo/mainlogo.png'/>" alt="Chocolat Logo"></a>
+                        <a href="<c:url value='/'/>" class="retina-logo" data-dark-logo="<c:url value='/resources/images/logo/mainlogo.png' />"><img src="<c:url value='/resources/images/logo/mainlogo.png'/>" alt="Chocolat Logo"></a>                   
+                    </div><!-- #logo end -->
 	
 	<!-- Primary Navigation
 	               ============================================= -->
 	          <nav id="primary-menu">
-	              <ul class="">
-	                  <li class="current"><a href="#" onclick="return false;"><div>호텔소개</div></a>
-	                              <ul>                                
-	                          		<li><a href="hotel-About-Us.html"><div>호텔소개</div></a></li>
-	                          		<li><a href="Location.html"><div>호텔위치</div></a></li>
-	                          		<li><a href="list.do"><div>공지사항</div></a></li>
-	                               </ul>                                                              
-	                  </li>
-	                  <li><a href="#" onclick="return false;"><div>객실</div></a>
-	                      <ul>
-	                          <li><a href="deluxe-1.html"><div>디럭스</div></a>
-	                              <ul>
-	                                  <li><a href="deluxe-1.html"><div>디럭스 더블</div></a></li>
-	                                  <li><a href="deluxe-2.html"><div>디럭스 트윈</div></a></li>
-	                                  
-	                              </ul>
-	                          </li>
-	                          <li><a href="suite-1.html"><div>스위트</div></a>
-	                              <ul>
-	                                  <li><a href="suite-1.html"><div>패밀리 스위트</div></a></li>
-	                                  <li><a href="suite-2.html"><div>그랜드 스위트</div></a></li>
-	           
-	                              </ul>
-	                          </li>                                                                                                                                       
-	                      </ul>
-	                  </li>
-	                  <li><a href="dining-1.html"><div>다이닝</div></a>
-	                      <ul>
-	                          <li><a href="dining-1.html"><div>파노라마 (올 데이 다이닝)</div></a></li>
-	                      </ul>
-	                  </li>
-	                  <li><a href="#" onclick="return false;"><div>부대시설</div></a>
-	                      <ul>
-	                      	<li><a href="menu-item.jsp"><div>사계절 온수풀 해온</div></a></li>
-	                      	<li><a href="menu-item2.jsp"><div>해온 루프탑 테라스</div></a></li>
-	                  		<li><a href="menu-item3.jsp"><div>프라이빗 카바나</div></a></li>
-	                      </ul>
-	                  </li>
-	                  <li><a href="contact-1.jsp"><div>고객의 소리</div></a></li>
-	                  <li><a href="Reseravtion.do"><div>예약하기</div></a></li>     
-	                  <li><a href="<c:url value='/reservation/ReservationSelect'/>"><div>예약조회 및 취소</div></a></li>         
-	              <c:choose>
-		              <c:when test="${m_id eq null}">
-		                  <li><a href="hewon.jsp"><div>로그인</div></a>
-		                      <ul>
-		                      	<li><a href="hewon.jsp"><div>로그인</div></a></li>
-		                      	<li><a href="searchIdpass.jsp"><div>아이디/비밀번호 찾기</div></a></li>
-		                      	<li><a href="MemberAddForm2.jsp"><div>회원가입</div></a></li>
-		                      </ul>   
-		                   </li>
-		                 </c:when>
-	                      <c:otherwise>
-	                          <li><a href="memLogout.do"><div>로그아웃</div></a></li>
-	                       </c:otherwise>
-	                  </c:choose>
-	              </ul>
-	          </nav><!-- #primary-menu end -->
+
+                        <ul class="">
+                            <li ><a href="<c:url value="/hotel-About-Us"/>"><div>호텔소개</div></a>
+                                        <ul>                                
+                                    		<li><a href="<c:url value="/hotel-About-Us"/>"><div>호텔소개</div></a></li>
+                                    		<li><a href="<c:url value="/Location"/>"><div>호텔위치</div></a></li>
+                                    		<li><a href="<c:url value='/notice/NoticeList'/>"><div>공지사항</div></a></li>
+                                         </ul>                                                              
+                            </li>
+                            <li><a href="#" onclick="return false;"><div>객실</div></a>
+                                <ul>
+                                    <li><a href="<c:url value="/deluxe-1"/>"><div>디럭스</div></a>
+                                        <ul>
+                                            <li><a href="<c:url value="/deluxe-1"/>"><div>디럭스 더블</div></a></li>
+                                            <li><a href="<c:url value="/deluxe-2"/>"><div>디럭스 트윈</div></a></li>
+                                            
+                                        </ul>
+                                    </li>
+                                    <li><a href="<c:url value="/suite-1"/>"><div>스위트</div></a>
+                                        <ul>
+                                            <li><a href="<c:url value="/suite-1"/>"><div>패밀리 스위트</div></a></li>
+                                            <li><a href="<c:url value="/suite-2"/>"><div>그랜드 스위트</div></a></li>
+                     
+                                        </ul>
+                                    </li>                                                                                                                                       
+                                </ul>
+                            </li>
+                            <li><a href="<c:url value="/dining-1"/>"><div>다이닝</div></a>
+                                <ul>
+                                    <li><a href="<c:url value="/dining-1"/>"><div>파노라마 (올 데이 다이닝)</div></a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#" onclick="return false;"><div>부대시설</div></a>
+                                <ul>
+                                	<li><a href="<c:url value="/menu-item"/>"><div>사계절 온수풀 해온</div></a></li>
+                                	<li><a href="<c:url value="/menu-item2"/>"><div>해온 루프탑 테라스</div></a></li>
+                            		<li><a href="<c:url value="/menu-item3"/>"><div>프라이빗 카바나</div></a></li>
+                                </ul>
+                            </li>
+                            <li><a href="<c:url value="/contact-1"/>"><div>고객의 소리</div></a></li>
+                            <c:choose>
+	                            <c:when test="${m_id ne null}">
+		                            <li class="current"><a href="<c:url value='/reservation/r'/>"><div>예약하기</div></a></li>   
+		                            <li><a href="<c:url value='/reservation/ReservationSelect'/>"><div>예약조회 및 취소</div></a></li>
+	                            </c:when>
+	                           <c:otherwise>
+		                            <li class="current"><a href="<c:url value='/member/LoginLogOut'/>"><div>예약하기</div></a></li>   
+		                            <li><a href="<c:url value='/member/LoginLogOut'/>"><div>예약조회 및 취소</div></a></li>
+	                           </c:otherwise>
+                            </c:choose>
+                            
+                               <c:choose>
+                               		<c:when test="${m_id eq null}">         
+                           		 			<li><a href="<c:url value ='/member/LoginLogOut'/>"><div>로그인</div></a>
+                           		 		<ul>
+                                	    	<li><a href="<c:url value ='/member/LoginLogOut'/>"><div>로그인</div></a></li>
+                                	   		<li><a href="<c:url value='/member/MemberInsert'/>"><div>회원가입</div></a></li>
+                                  	    </ul>                
+                           				 </li>
+                                  </c:when>     
+                                  <c:otherwise>
+                                   		 <li><a href="<c:url value='/member/Logout'/>"><div>로그아웃</div></a></li>
+                                    </c:otherwise>
+                            </c:choose>   
+                        </ul> 
+                    </nav><!-- #primary-menu end -->
 			</div>
 		</div>
 	
@@ -431,11 +438,11 @@
 	
 							<div class="widget_links clearfix">
 	                            			<ul>
-	                                			<li><a href="index.do"><div>메인</div></a></li>
-	                                			<li><a href="list.do"><div>공지사항</div></a></li>
-	                                			<li><a href="hotel-About-Us.html"><div>호텔소개</div></a></li>
-	                                			<li><a href="Location.html"><div>호텔위치</div></a></li>
-	                                            <li><a href="contact-1.jsp"><div>고객의 소리</div></a></li>
+	                                			<li><a href="<c:url value='/'/>"><div>메인</div></a></li>
+                                    		<li><a href="<c:url value='/notice/NoticeList'/>"><div>공지사항</div></a></li>
+                                    		<li><a href="<c:url value="/hotel-About-Us"/>"><div>호텔소개</div></a></li>
+                                    		<li><a href="<c:url value="/Location"/>"><div>호텔위치</div></a></li>
+                                            <li><a href="<c:url value="/contact-1"/>"><div>고객의 소리</div></a></li>
 	                            			</ul>
 	                        			</div>
 	                                </div>
@@ -444,11 +451,11 @@
 	
 	                        			<div class="widget_links clearfix">
 	                            			<ul>
-	                                			<li><a href="deluxe-1.html"><div>객실 - 디럭스</div></a></li>
-	                                			<li><a href="suite-1.html"><div>객실 - 스위트</div></a></li>
-	                                			<li><a href="dining-1.html"><div>다이닝</div></a></li>
-	                                			<li><a href="Reseravtion.do"><div>예약하기</div></a></li>
-	                                            <li><a href="<c:url value='/reservation/ReservationSelect'/>"><div>예약조회 및 취소</div></a></li>
+	                                		<li><a href="<c:url value="/deluxe-1"/>"><div>객실 - 디럭스</div></a></li>
+                                    			<li><a href="<c:url value="/suite-1"/>"><div>객실 - 스위트</div></a></li>
+                                    			<li><a href="<c:url value="/dining-1"/>"><div>다이닝</div></a></li>
+                                    			<li><a href="<c:url value='/reservation/r'/>"><div>예약하기</div></a></li>
+                                                <li><a href="<c:url value='/reservation/ReservationSelect'/>"><div>예약조회 및 취소</div></a></li>
 	                            			</ul>
 							</div>
 						</div>                                     
@@ -492,52 +499,43 @@
 	<!-- Copyrights
 	         ============================================= -->
 	<div id="copyrights">
-	
-		<div class="container clearfix">
-		
-		
-	
-	
-			<div class="col_half">
-				<img src="<c:url value='/resources/images/logo/footer-logo.png'/>" alt=""
-	class="footer-logo standard-logo"> <img
-	src="<c:url value='/resources/images/logo/footer-logo-large.png'/>" alt=""
-					class="footer-logo retina-logo"> Copyright &copy; 2019
-				Hotel Delluna. All Rights Reserved.
-			</div>
-	
-			<div class="col_half col_last tright">
-				<div class="copyrights-menu copyright-links fright clearfix">
-					<a href="#">공지사항</a> <a href="hotel-About-Us.html">호텔소개</a> <a
-						href="deluxe-1.html">객실</a> <a href="contact-2.jsp">예약조회 및
-						취소</a> <a href="contact-1.jsp">고객의 소리</a>
-				</div>
+
+                <div class="container clearfix">
+
+                    <div class="col_half">
+                        <img src="<c:url value='/resources/images/logo/footer-logo.png'/>" alt="" class="footer-logo standard-logo">
+                        <img src="<c:url value='/resources/images/logo/footer-logo-large.png' />" alt="" class="footer-logo retina-logo">
+                        Copyright &copy; 2020 Hotel Delluna. All Rights Reserved.
+                    </div>
+
+                    <div class="col_half col_last tright">
+                        <div class="copyrights-menu copyright-links fright clearfix">
+                            <a href="<c:url value='/notice/NoticeList'/>">공지사항</a>
+                             <a href="<c:url value="/hotel-About-Us"/>">호텔소개</a>
+                              <a href="<c:url value="/deluxe-1"/>">객실</a>
+                               <a href="<c:url value='/reservation/ReservationSelect'/>">예약조회 및 취소</a>
+                                <a href="<c:url value="/contact-1"/>">고객의 소리</a>
+                        </div>
+                        
 				<div class="fright clearfix">
-					<a href="#"
-						class="social-icon si-small si-borderless nobottommargin si-facebook">
-						<i class="icon-facebook"></i> <i class="icon-facebook"></i>
-					</a> <a href="#"
-						class="social-icon si-small si-borderless nobottommargin si-twitter">
-						<i class="icon-twitter"></i> <i class="icon-twitter"></i>
-					</a> <a href="#"
-						class="social-icon si-small si-borderless nobottommargin si-gplus">
-						<i class="icon-gplus"></i> <i class="icon-gplus"></i>
-					</a> <a href="#"
-						class="social-icon si-small si-borderless nobottommargin si-pinterest">
-						<i class="icon-pinterest"></i> <i class="icon-pinterest"></i>
-					</a> <a href="#"
-						class="social-icon si-small si-borderless nobottommargin si-vimeo">
-						<i class="icon-vimeo"></i> <i class="icon-vimeo"></i>
-					</a> <a href="#"
-						class="social-icon si-small si-borderless nobottommargin si-github">
-						<i class="icon-github"></i> <i class="icon-github"></i>
-					</a> <a href="#"
-						class="social-icon si-small si-borderless nobottommargin si-yahoo">
-						<i class="icon-yahoo"></i> <i class="icon-yahoo"></i>
-					</a> <a href="#"
-						class="social-icon si-small si-borderless nobottommargin si-linkedin">
-						<i class="icon-linkedin"></i> <i class="icon-linkedin"></i>
-					</a>
+					   <a href="https://www.facebook.com/" class="social-icon si-small si-borderless nobottommargin si-facebook">
+                                <i class="icon-facebook"></i>
+                                <i class="icon-facebook"></i>
+                            </a>
+
+                            <a href="https://twitter.com/explore" class="social-icon si-small si-borderless nobottommargin si-twitter">
+                                <i class="icon-twitter"></i>
+                                <i class="icon-twitter"></i>
+                            </a>
+                            <a href="https://github.com/park002" class="social-icon si-small si-borderless nobottommargin si-github">
+                                <i class="icon-github"></i>
+                                <i class="icon-github"></i>
+                            </a>
+
+                            <a href="https://www.yahoo.com/" class="social-icon si-small si-borderless nobottommargin si-yahoo">
+                                <i class="icon-yahoo"></i>
+                                <i class="icon-yahoo"></i>
+                            </a>
 				</div>
 			</div>
 	

@@ -1,7 +1,7 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+	<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+	<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html dir="ltr" lang="UTF-8">
 <head>
@@ -9,9 +9,9 @@
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 	<meta name="description" content="Bootstrap 3 Website Template" />
 
-    <!-- Stylesheets 고객의소리
+    <!-- Stylesheets
     ============================================= -->
-	<link rel="icon" type="image/png" sizes="16x16" href="<c:url value='/resources/images/favicon/favicon-16x16.png' />">
+		<link rel="icon" type="image/png" sizes="16x16" href="<c:url value='/resources/images/favicon/favicon-16x16.png' />">
 	<link rel="icon" type="image/png" sizes="32x32" href="<c:url value='/resources/images/favicon/favicon-32x32.png'/>">
 	<link href="http://fonts.googleapis.com/css?family=PT+Sans:300,400,500,600,700" rel="stylesheet" type="text/css" />
 	<link rel="stylesheet" href="<c:url value='/resources/css/bootstrap.css'/>" type="text/css" />
@@ -20,21 +20,21 @@
 	<link rel="stylesheet" href="<c:url value='/resources/css/font-icons.css'/>" type="text/css" />
 	<link rel="stylesheet" href="<c:url value='/resources/css/animate.css'/>" type="text/css" />
 	<link rel="stylesheet"  href="<c:url value='/resources/css/magnific-popup.css'/>"  type="text/css" />
-	<link rel="stylesheet"href="<c:url value='/resources/css/responsive.css'/>"  type="text/css" />
-	<link rel="stylesheet"  type="text/css" href="https://unpkg.com/vue-airbnb-style-datepicker@latest/dist/vue-airbnb-style-datepicker.min.css" />
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+ 	<link rel="stylesheet" href="<c:url value='/resources/css/responsive.css'/>"  type="text/css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <!--[if lt IE 9]>
     	<script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
     <![endif]-->
 
     <!-- External JavaScripts
     ============================================= -->
-	   <script type="text/javascript" src="<c:url value='/resources/js/jquery.js'/>"></script>
-   <script type="text/javascript" src="<c:url value='/resources/js/plugins.js'/>"></script>
+	<script src="<c:url value='/resources/js/jquery.js'/>"> </script>
+	<script src="<c:url value='/resources/js/plugins.js'/>"> </script>
 
     <!-- Document Title
     ============================================= -->
-	<title>Hotel Delluna  | Notice</title>
+	<title>Hotel Delluna</title>
+
 
 </head>
 
@@ -54,21 +54,19 @@
 
                     <div id="primary-menu-trigger"><i class="icon-reorder"></i></div>
 
-                       <!-- Logo
+                    <!-- Logo
                     ============================================= -->
-                    <div id="logo">
+                 <div id="logo">
                         <a href= "<c:url value='/'/>" class="standard-logo" data-dark-logo="<c:url value='/resources/images/logo/mainlogo.png'/>"><img src="<c:url value='/resources/images/logo/mainlogo.png'/>" alt="Chocolat Logo"></a>
                         <a href="<c:url value='/'/>" class="retina-logo" data-dark-logo="<c:url value='/resources/images/logo/mainlogo.png' />"><img src="<c:url value='/resources/images/logo/mainlogo.png'/>" alt="Chocolat Logo"></a>                   
                     </div><!-- #logo end -->
 
-                                      <!-- Primary Navigation
+                                     <!-- Primary Navigation
                     ============================================= -->
-                               <!-- Primary Navigation
-                    ============================================= -->
-                    <nav id="primary-menu">
+                         <nav id="primary-menu">
 
                         <ul class="">
-                            <li class="current"><a href="<c:url value="/hotel-About-Us"/>"><div>호텔소개</div></a>
+                            <li><a href="<c:url value="/hotel-About-Us"/>"><div>호텔소개</div></a>
                                         <ul>                                
                                     		<li><a href="<c:url value="/hotel-About-Us"/>"><div>호텔소개</div></a></li>
                                     		<li><a href="<c:url value="/Location"/>"><div>호텔위치</div></a></li>
@@ -98,7 +96,7 @@
                                     <li><a href="<c:url value="/dining-1"/>"><div>파노라마 (올 데이 다이닝)</div></a></li>
                                 </ul>
                             </li>
-                            <li><a href="#" onclick="return false;"><div>부대시설</div></a>
+                            <li class="current"><a href="#" onclick="return false;"><div>부대시설</div></a>
                                 <ul>
                                 	<li><a href="<c:url value="/menu-item"/>"><div>사계절 온수풀 해온</div></a></li>
                                 	<li><a href="<c:url value="/menu-item2"/>"><div>해온 루프탑 테라스</div></a></li>
@@ -135,148 +133,66 @@
                 </div>
           </div>
 
-        </header><!-- #header end -->    
+        </header><!-- #header end -->
         
-        <!-- Page Title 배경
+        <!-- Page Title
         ============================================= -->
-        
+        <section id="page-title" class="page-title-parallax"
+         style="background-image: url('<c:url value="/resources/images/favicon/ba.jpg"/>'); 
+         padding: 300px 0;" data-stellar-background-ratio="0.3">
 
-          
-
-        <!-- #page-title end -->        
-
-        <!-- Google Map
-        ============================================= -->
+            <div class="container clearfix">
+               
+             <!-- 여기 글적으면 메인에 글씨  -->
+              
+              
       
+            </div>
+
+   	  </section><!-- #page-title end -->        
+
         <!-- Content
         ============================================= -->
         <section id="content">
 
-            <div class="section content-wrap notopmargin nobottommargin bgcolor-grey">
+            <div class="content-wrap bgcolor-grey-light">
 
                 <div class="container clearfix">
 
-                    <!-- Postcontent
+                    <!-- Portfolio Single Image
                     ============================================= -->
-                    <div class="postcontent nobottommargin">
+                    <div class="col_two_third portfolio-single-image nobottommargin">
+                    <!--menu-item.jpg  -->
+                        <img src="<c:url value="/resources/images/favicon/ba2.jpg"/>" alt="" width="300" height="430">                     
+                    </div><!-- .portfolio-single-image end -->
 
-                        <h3>공지사항 | Notice</h3>
-
-                        <div id="contact-form-result" data-notify-type="success" data-notify-msg="<i class=icon-ok-sign></i> Message Sent Successfully!"></div>
-
-                    <form class="nobottommargin" id="template-contactform"  action="<c:url value='/notice/WriteModifiy?b_no=${dto.b_no}&b_date=${dto.b_date}'/>" method="post">
-                            <div class="form-process"></div>
-                               <div class="col_one_third">
-                                <label for="template-contactform-name">No <c:out value="${dto.b_no}"/><small>*</small></label>
-                            </div>
-                            
-                               <div class="col_one_third">
-                                 <label for="template-contactform-name">작성일 <small>*</small></label>
-                                 <fmt:formatDate value="${dto.b_date}" pattern="yyyy-MM-dd" />
-                              </div>
-                         		 
-                            <div class="col_one_third">
-                                <label for="template-contactform-name">관리자 <small>*</small></label>
-                               <c:out value="${dto.b_writer}"/>
-                            </div>
-                            
-                              <font id="RemoveFont" color="red" size="2"> </font>
-                                    
-                                  <c:choose>
-                                  <c:when test="${m_id eq 'admin'}">
-                            <div class="clear"></div>
-                            <div class="col_two_third" id="Content_title">
-                                <label for="template-contactform-subject">제목 <small>*</small></label>
-                                <input type="text" id="template-contactform-subject" name="b_title" value="<c:out value="${dto.b_title}"/>"  class="required sm-form-control"  maxlength="40" />
-                            </div>
-                            <div class="clear"></div>
-                            <div class="col_full" id="Content_detail">
-                                <label for="template-contactform-message">내용 <small>*</small></label>
-                                <textarea class="required sm-form-control" id="template-contactform-message" name="b_detail" rows="15" cols="30" ><c:out value='${dto.b_detail}'/></textarea>
-                            </div>
-                            </c:when>
-                            <c:otherwise>
-                             <div class="clear"></div>
-                            <div class="col_two_third" id="Content_title">
-                                <label for="template-contactform-subject">제목 <small>*</small></label>
-                                <input type="text" id="template-contactform-subject" name="b_title" value="<c:out value="${dto.b_title}"/>"  class="required sm-form-control"  readonly="readonly" maxlength="40" />
-                            </div>
-                            <div class="clear"></div>
-                            <div class="col_full" id="Content_detail">
-                                <label for="template-contactform-message">내용 <small>*</small></label>
-                                <textarea class="required sm-form-control" id="template-contactform-message" name="b_detail" rows="15" cols="30" readonly="readonly"><c:out value='${dto.b_detail}'/></textarea>
-                            </div>
-                            </c:otherwise>
-                            
-						</c:choose> 
-                            <!-- <div class="col_full hidden">
-                                <input type="text" id="template-contactform-botcheck" name="template-contactform-botcheck" value="" class="sm-form-control" />
-                            </div> -->
-  							
-                            <div class="col_full">
-                               <!--  <button class="btn button nomargin"  id="template-contactform-submit" name="template-contactform-submit" value="submit">작성</button> -->
-                               <c:if test="${m_id eq 'admin'}">
-                               <button  class="btn button nomargin"  id="ContentModify" >수정</button>
-                                 <button type="button" class="btn button nomargin"  id="ContentRemove" onclick="NoticeDelete()" >삭제</button>
-                                 </c:if>
-                                    <button type="button"  class="btn button nomargin"  id="noticeList" onclick="location.href='<c:url value="/notice/NoticeList"/>'">글 목록</button>
-                            </div>
-                        </form>
-          
-	             		<script>
-	             		       
-              					function NoticeDelete() {
-              						if(confirm('정말 삭제 하시겠습니까?')) {
-              						$.ajax({
-              							type:'GET',
-              							url:'<c:url value="/notice/NoticeDelete"/>',
-              							data: {"b_no" : "${dto.b_no}"},
-              							success:function(result){
-              								$("#Content_title").hide();
-              								$("#Content_detail").hide();
-              								$("#ContentModify").hide();
-              								$("#ContentRemove").hide();
-              								$("#RemoveFont").html("NO."+result+"<br>정상적으로 삭제되었습니다.");              								
-              							}//success
-              						}); //ajax
-              					} //if
-              						else return false;
-              					}//function NoticeDelete
-            		   </script>
-                      <!--   <script type="text/javascript">
-
-                            $("#template-contactform").validate({
-                                submitHandler: function(form) {
-                                    $('.form-process').fadeIn();
-                                    $(form).ajaxSubmit({
-                                        target: '#contact-form-result',
-                                        success: function() {
-                                            $('.form-process').fadeOut();
-                                            $('#template-contactform').find('.sm-form-control').val('');
-                                            $('#contact-form-result').attr('data-notify-msg', $('#contact-form-result').html()).html('');
-                                            IGNITE.widget.notifications($('#contact-form-result'));
-                                        }
-                                    });
-                                }
-                            });
-
-                        </script> -->
-
-                    </div><!-- .postcontent end -->
-				
-                    <!-- Sidebar
+                    <!-- Portfolio Single Content
                     ============================================= -->
-                    <div class="sidebar col_last nobottommargin">
+                    <div class="col_one_third portfolio-single-content col_last nobottommargin">
 
-                        <address>
-                            <strong>Address:</strong><br>
-                           63535, 제주특별자치도 서귀포시 중문관광로 72번길, 호텔 델루나.
-                        </address>
-                        <strong>Phone:</strong> (341) 457 432678<br>
-                        <strong>Fax:</strong> (341) 457 538478<br>
-                     
-                        <div class="widget noborder notoppadding">
-                        	<a href="https://www.facebook.com/" class="social-icon si-light si-small si-facebook">
+                        <!-- Portfolio Single - Description
+                        ============================================= -->
+                        <div class="fancy-title title-bottom-border">
+                            <h1>프라이빗 카바나</h1>
+                        </div> <p>
+					                        럭셔리한 쉼표, 롯데호텔제주 프라이빗 카바나</p> 
+					- 42인치 TV와 편안한 소파 베드를 완비한 최고급 카바나<br>
+					- 키즈풀 앞에 위치한 카바나에서 아이들의 물놀이 모습을 보며, 맛있는 식사를 즐겨보세요.<br><br>
+					<b>☞ 시간 및 요금</b> <br>
+					11월 ~ 4월<br>
+					1회 09:30~13:00 : ￦100,00　2회 14:00~18:00 : ￦150,00　3회 19:00~23:00 : ￦150,00<br>
+					5월 ~ 10월<br>
+					1회 09:30~13:00 : ￦150,00　2회 14:00~18:00 : ￦200,00　3회 19:00~23:00 : ￦200,00  <br><br>
+                    
+                       
+                        <!-- Portfolio Single - Description End -->
+
+                        <!-- Portfolio Single - Share
+                        ============================================= -->
+                        <div class="si-share clearfix">
+                            <span>Share:</span>
+                            <div>
+                       <a href="https://www.facebook.com/" class="social-icon si-light si-small si-facebook">
                             	<i class="icon-facebook"></i>
                                 <i class="icon-facebook"></i></a>
                             <a href="https://twitter.com/?lang=ko" class="social-icon si-light si-small si-twitter">
@@ -290,14 +206,145 @@
                                 <i class="icon-gplus"></i></a>
                             <a href="https://www.moakt.com/ko" class="social-icon si-light si-small si-email3">
                                 <i class="icon-email3"></i>
-                                <i class="icon-email3"></i></a>
-                        </div>                        
+                                <i class="icon-email3"></i></a>        
+                        	</div>
+                        </div>
+                        <!-- Portfolio Single - Share End -->
+                    </div><!-- .portfolio-single-content end -->
 
-                    </div><!-- .sidebar end -->
+                    <div class="clear"></div>
+                    
+                            <!-- Comments
+                            ============================================= -->
+                            <div id="comments" class="clearfix">
 
+
+                                <h2 id="comments-title">부대시설 개요 </h2>
+									<b>타입</b> Spa & Garden <br>
+									<b>위치</b>   Garden 1F <br>
+									<b>이용시간</b><br>
+									   09:00 ~ 23:00 (5월~10월)  <br>
+									09:30 ~ 23:00 (11월~4월)
+									<p>
+
+		                                <h2 id="comments-title2">추가 정보 </h2>
+										<b>※ 패키지 특전으로 카바나 이용 시 3회는 이용할 수 없습니다. (개별 예약만 가능) </b><br>
+										
+										<br><br><h2>문의안내</h2>
+										<b>TEL +82-1234-1234 </b><br>
+
+
+                                <!-- Disqus Comments
+                                ============================================= -->
+                                       
+
+                    <div class="divider divider-center"><i class="icon-circle"></i></div>
+
+                    <!-- Related Portfolio Items
+                    ============================================= -->
+                    <h3>갤러리</h3>
+
+                    <div id="related-portfolio" class="owl-carousel portfolio-carousel">
+
+                        <div class="oc-item">
+                            <div class="iportfolio">
+                                <div class="portfolio-image">
+                                    <a href="portfolio-single.html"><img src="<c:url value="/resources/images/favicon/ba.jpg"/>" alt=""></a>
+                                	<div class="portfolio-overlay">
+                                    	<a href="<c:url value="/resources/images/favicon/ba.jpg"/>" class="left-icon" data-lightbox="image">
+                                    	<i class="icon-picture"></i></a>
+                                                                 
+                                	</div>
+                            	</div>
+                            	<div class="portfolio-desc">
+                            		              
+                            	</div>
+                        	</div>                        
+                        </div>
+                        
+                        <div class="oc-item">
+                            <div class="iportfolio">
+                                <div class="portfolio-image">
+                                    <a href="#"><img src="<c:url value="/resources/images/favicon/ba2.jpg"/>" alt=""></a>
+                                    <div class="portfolio-overlay">
+                                    	<a href="<c:url value="/resources/images/favicon/ba2.jpg"/>" class="left-icon" data-lightbox="image"><i class="icon-picture"></i></a>
+                                                                    
+                                    </div>
+                                </div>
+                      
+                        	</div>
+                        </div>
+                        
+                        <div class="oc-item">
+                            <div class="iportfolio">
+                                <div class="portfolio-image">
+                                    <a href="#"><img src="<c:url value="/resources/images/favicon/ba3.jpg"/>" alt=""></a>
+                                    <div class="portfolio-overlay">
+                                        <a href="<c:url value="/resources/images/favicon/ba3.jpg"/>" class="left-icon" data-lightbox="image"><i class="icon-picture"></i></a>
+                                                            
+                                    </div>
+                                </div>
+                                <div class="portfolio-desc">
+                                       
+                                </div>
+                            </div>
+                        </div>
+                        
+                       
+                        <div class="oc-item">
+                            <div class="iportfolio">
+                                <div class="portfolio-image">
+                                    <a href="#"><img src="<c:url value="/resources/images/favicon/ba6.jpg"/>" alt=""></a>
+                                    <div class="portfolio-overlay">
+                                        <a href="<c:url value="/resources/images/favicon/ba6.jpg"/>" class="left-icon" data-lightbox="image"><i class="icon-picture"></i></a>
+                                                                   
+                                    </div>
+                                </div>
+                            
+                            </div>
+                        </div>
+                        
+                        <div class="oc-item">
+                            <div class="iportfolio">
+                                <div class="portfolio-image">
+                                    <a href="#"><img src="<c:url value="/resources/images/favicon/ba5.jpg"/>" alt=""></a>
+                                    <div class="portfolio-overlay">
+                                        <a href="<c:url value="/resources/images/favicon/ba5.jpg"/>" class="left-icon" data-lightbox="image"><i class="icon-picture"></i></a>
+                                                            
+                                    </div>
+                                </div>
+                            
+                            </div>
+                        </div>
+                        
+                    </div><!-- .portfolio-carousel end -->
+
+                    <script type="text/javascript">
+
+                        jQuery(document).ready(function($) {
+
+                            var relatedPortfolio = $("#related-portfolio");
+
+                            relatedPortfolio.owlCarousel({
+                                margin: 20,
+                                nav: true,
+                                dots:true,
+                                autoplay: true,
+                                autoplayHoverPause: true,
+                                responsive:{
+                                    0:{ items:1 },
+                                    480:{ items:2 },
+                                    768:{ items:3 },
+                                    992: { items:4 }
+                                }
+                            });
+
+                        });
+
+                    </script>
                 </div>
 
-            </div>
+          </div>
 
         </section><!-- #content end -->
 
@@ -316,16 +363,20 @@
                         <div class="widget clearfix">
 
                             <h3>(주)호텔 델루나 <span>02-1544-1111</span></h3>
-                            <p>63535, 제주특별자치도 서귀포시 중문관광로 72번길, 호텔 델루나.</p>
+                            <p>Email : hoteldelluna@hoteldelluna.co.kr</p>
 
                             <div class="line" style="margin: 30px 0;"></div>
 
                             <div class="col_half">
                                 <div class="widget subscribe-widget clearfix">
-                                    <h5>Email : hoteldelluna@hoteldelluna.co.kr
+                                   
                                     <div id="widget-subscribe-form-result" data-notify-type="success" data-notify-msg=""></div>
                                     <form id="widget-subscribe-form" action="include/subscribe.php" role="form" method="post" class="nobottommargin">
-  								
+                                        <div class="input-group divcenter">                                            
+                                            
+                                            <span class="input-group-btn">
+                                              
+                                            </span>                                        </div>
                                     </form>
                                     <script type="text/javascript">
                                         $("#widget-subscribe-form").validate({
@@ -345,6 +396,7 @@
                                     </script>
                                 </div>                            
                             </div>
+
                             <div class="col_half col_last">
                                 <div class="widget clearfix">
 
@@ -354,7 +406,7 @@
 
                             			<div class="widget_links clearfix">
                                 			<ul>
-                                    				<li><a href="<c:url value='/'/>"><div>메인</div></a></li>
+                                    		<li><a href="<c:url value='/'/>"><div>메인</div></a></li>
                                     		<li><a href="<c:url value='/notice/NoticeList'/>"><div>공지사항</div></a></li>
                                     		<li><a href="<c:url value="/hotel-About-Us"/>"><div>호텔소개</div></a></li>
                                     		<li><a href="<c:url value="/Location"/>"><div>호텔위치</div></a></li>
@@ -367,7 +419,7 @@
 
                             			<div class="widget_links clearfix">
                                 			<ul>
-                                    				<li><a href="<c:url value="/deluxe-1"/>"><div>객실 - 디럭스</div></a></li>
+                                    			<li><a href="<c:url value="/deluxe-1"/>"><div>객실 - 디럭스</div></a></li>
                                     			<li><a href="<c:url value="/suite-1"/>"><div>객실 - 스위트</div></a></li>
                                     			<li><a href="<c:url value="/dining-1"/>"><div>다이닝</div></a></li>
                                     			<li><a href="<c:url value='/reservation/r'/>"><div>예약하기</div></a></li>
@@ -386,10 +438,16 @@
                         <div class="fancy-title title-border">
                             <h4>Hours</h4>
                         </div>
+
+                       <b>호텔서비스</b>
+                         <br>00:00 ~ 24:00<br>
+                         <br>
                         <ul class="nobottommargin nobullets">
-                            <li><strong>호텔서비스</strong><br>00:00 ~ 24:00</li><br>
-                            <li><strong>객실예약(주중)</strong><br>09:00 ~ 18:00</li><br>
-                            <li>업무시간 외에는<br> 온라인 예약을 이용해주시기 바랍니다.</li>
+                            <li><strong>객실예약 (주중) </strong> </li>
+                            
+                            09:00 ~ 18:00<br><br>
+                              업무시간 외에는<br>
+                              온라인 예약을 이용해주시기 바랍니다.
                         </ul>
                         </div>
                         
@@ -399,7 +457,7 @@
                         </div>
 
                         <ul class="nobottommargin nobullets">
-                            <li>63535, 제주특별자치도 </li>
+                            <li>63535, 제주특별자치도</li>
                             <li>서귀포시 중문관광로 72번길, 호텔 델루나.</li>
                         </ul>
                         </div>                                                
@@ -411,18 +469,17 @@
 
             <!-- Copyrights
             ============================================= -->
-              <div id="copyrights">
+               <div id="copyrights">
                 <div class="container clearfix">
-
                     <div class="col_half">
-                        <img src="<c:url value='/resources/images/logo/footer-logo.png'/>" alt="" class="footer-logo standard-logo">
+                     <img src="<c:url value='/resources/images/logo/footer-logo.png'/>" alt="" class="footer-logo standard-logo">
                         <img src="<c:url value='/resources/images/logo/footer-logo-large.png' />" alt="" class="footer-logo retina-logo">
                         Copyright &copy; 2020 Hotel Delluna. All Rights Reserved.
                     </div>
 
                     <div class="col_half col_last tright">
                         <div class="copyrights-menu copyright-links fright clearfix">
-                            <a href="<c:url value='/notice/NoticeList'/>">공지사항</a>
+                              <a href="<c:url value='/notice/NoticeList'/>">공지사항</a>
                              <a href="<c:url value="/hotel-About-Us"/>">호텔소개</a>
                               <a href="<c:url value="/deluxe-1"/>">객실</a>
                                <a href="<c:url value='/reservation/ReservationSelect'/>">예약조회 및 취소</a>
@@ -430,24 +487,21 @@
                         </div>
                         
                         <div class="fright clearfix">
-                           <a href="https://www.facebook.com/" class="social-icon si-small si-borderless nobottommargin si-facebook">
-                                <i class="icon-facebook"></i>
-                                <i class="icon-facebook"></i>
-                            </a>
-
-                            <a href="https://twitter.com/explore" class="social-icon si-small si-borderless nobottommargin si-twitter">
+                         <a href="https://www.facebook.com/" class="social-icon si-light si-small si-facebook">
+                            	<i class="icon-facebook"></i>
+                                <i class="icon-facebook"></i></a>
+                            <a href="https://twitter.com/?lang=ko" class="social-icon si-light si-small si-twitter">
                                 <i class="icon-twitter"></i>
-                                <i class="icon-twitter"></i>
-                            </a>
-                            <a href="https://github.com/park002" class="social-icon si-small si-borderless nobottommargin si-github">
-                                <i class="icon-github"></i>
-                                <i class="icon-github"></i>
-                            </a>
-
-                            <a href="https://www.yahoo.com/" class="social-icon si-small si-borderless nobottommargin si-yahoo">
-                                <i class="icon-yahoo"></i>
-                                <i class="icon-yahoo"></i>
-                            </a>
+                                <i class="icon-twitter"></i></a>
+                            <a href="https://www.pinterest.co.kr/" class="social-icon si-light si-small si-pinterest">
+                                <i class="icon-pinterest"></i>
+                                <i class="icon-pinterest"></i></a>
+                            <a href="https://plus.google.com/" class="social-icon si-light si-small si-gplus">
+                                <i class="icon-gplus"></i>
+                                <i class="icon-gplus"></i></a>
+                            <a href="https://www.moakt.com/ko" class="social-icon si-light si-small si-email3">
+                                <i class="icon-email3"></i>
+                                <i class="icon-email3"></i></a>                   
                         </div>
                     </div>
 
@@ -465,7 +519,7 @@
 
     <!-- Footer Scripts
     ============================================= -->
-  <script type="text/javascript" src="<c:url value='/resources/js/functions.js'/>"></script>
+     <script type="text/javascript" src="<c:url value="/resources/js/functions.js"/>"></script>
 
 </body>
 </html>

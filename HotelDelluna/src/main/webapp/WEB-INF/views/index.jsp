@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
 	<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 	<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+	
 <!DOCTYPE html>
 <html dir="ltr" lang="UTF-8">
 <head>
@@ -20,8 +21,9 @@
 	<link rel="stylesheet" href="<c:url value='/resources/css/font-icons.css'/>" type="text/css" />
 	<link rel="stylesheet" href="<c:url value='/resources/css/animate.css'/>" type="text/css" />
 	<link rel="stylesheet"  href="<c:url value='/resources/css/magnific-popup.css'/>"  type="text/css" />
-	<link rel="stylesheet"href="<c:url value='/resources/css/responsive.css'/>"  type="text/css" />
+	<link rel="stylesheet" href="<c:url value='/resources/css/responsive.css'/>"  type="text/css" />
 	<link rel="stylesheet"  type="text/css" href="https://unpkg.com/vue-airbnb-style-datepicker@latest/dist/vue-airbnb-style-datepicker.min.css" />
+	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 	<script src="<c:url value='/resources/js/jquery.js'/>"> </script>
 	<script src="<c:url value='/resources/js/plugins.js'/>"> </script>
@@ -100,45 +102,44 @@
                     <nav id="primary-menu">
 
                         <ul class="">
-                            <li class="current"><a href="#" onclick="return false;"><div>호텔소개</div></a>
+                            <li class="current"><a href="<c:url value="/hotel-About-Us"/>"><div>호텔소개</div></a>
                                         <ul>                                
-                                    		<li><a href="hotel-About-Us.html"><div>호텔소개</div></a></li>
-                                    		<li><a href="Location.html"><div>호텔위치</div></a></li>
+                                    		<li><a href="<c:url value="/hotel-About-Us"/>"><div>호텔소개</div></a></li>
+                                    		<li><a href="<c:url value="/Location"/>"><div>호텔위치</div></a></li>
                                     		<li><a href="<c:url value='/notice/NoticeList'/>"><div>공지사항</div></a></li>
                                          </ul>                                                              
                             </li>
                             <li><a href="#" onclick="return false;"><div>객실</div></a>
                                 <ul>
-                                    <li><a href="deluxe-1.html"><div>디럭스</div></a>
+                                    <li><a href="<c:url value="/deluxe-1"/>"><div>디럭스</div></a>
                                         <ul>
-                                            <li><a href="deluxe-1.html"><div>디럭스 더블</div></a></li>
-                                            <li><a href="deluxe-2.html"><div>디럭스 트윈</div></a></li>
+                                            <li><a href="<c:url value="/deluxe-1"/>"><div>디럭스 더블</div></a></li>
+                                            <li><a href="<c:url value="/deluxe-2"/>"><div>디럭스 트윈</div></a></li>
                                             
                                         </ul>
                                     </li>
-                                    <li><a href="suite-1.html"><div>스위트</div></a>
+                                    <li><a href="<c:url value="/suite-1"/>"><div>스위트</div></a>
                                         <ul>
-                                            <li><a href="suite-1.html"><div>패밀리 스위트</div></a></li>
-                                            <li><a href="suite-2.html"><div>그랜드 스위트</div></a></li>
+                                            <li><a href="<c:url value="/suite-1"/>"><div>패밀리 스위트</div></a></li>
+                                            <li><a href="<c:url value="/suite-2"/>"><div>그랜드 스위트</div></a></li>
                      
                                         </ul>
                                     </li>                                                                                                                                       
                                 </ul>
                             </li>
-                            <li><a href="dining-1.html"><div>다이닝</div></a>
+                            <li><a href="<c:url value="/dining-1"/>"><div>다이닝</div></a>
                                 <ul>
-                                    <li><a href="dining-1.html"><div>파노라마 (올 데이 다이닝)</div></a></li>
+                                    <li><a href="<c:url value="/dining-1"/>"><div>파노라마 (올 데이 다이닝)</div></a></li>
                                 </ul>
                             </li>
                             <li><a href="#" onclick="return false;"><div>부대시설</div></a>
                                 <ul>
-                                	<li><a href="menu-item.jsp"><div>사계절 온수풀 해온</div></a></li>
-                                	<li><a href="menu-item2.jsp"><div>해온 루프탑 테라스</div></a></li>
-                            		<li><a href="menu-item3.jsp"><div>프라이빗 카바나</div></a></li>
+                                	<li><a href="<c:url value="/menu-item"/>"><div>사계절 온수풀 해온</div></a></li>
+                                	<li><a href="<c:url value="/menu-item2"/>"><div>해온 루프탑 테라스</div></a></li>
+                            		<li><a href="<c:url value="/menu-item3"/>"><div>프라이빗 카바나</div></a></li>
                                 </ul>
                             </li>
-                            <li><a href="contact-1.jsp"><div>고객의 소리</div></a></li>
-                            
+                            <li><a href="<c:url value="/contact-1"/>"><div>고객의 소리</div></a></li>
                             <c:choose>
 	                            <c:when test="${m_id ne null}">
 		                            <li><a href="<c:url value='/reservation/r'/>"><div>예약하기</div></a></li>   
@@ -427,7 +428,7 @@
                             </div>
                             <p>국내 최초 270˚파노라마 뷰를 조망할 수 있는<br> 자연 속 레스토랑 올 데이 다이닝 ‘파노라마 (Panorama)’에서는
 							<p>엄선된 재료로 정성스럽게 만들어진 조식 뷔페 부터 다채로운 디너까지 다양한 메뉴의 올 데이 다이닝을 사랑하는 사람들과 함께 즐기실 수 있습니다.</p>
-                            <a href="dining-1.html" class="btn btn-primary" role="button">자세히 보기</a>
+                            <a href="<c:url value="/dining-1"/>" class="btn btn-primary">자세히 보기</a>
                     </div>
            	  </div>
            	  
@@ -441,9 +442,9 @@
                                 <h3 data-animate="fadeInDown">FACILITIES</h3>
                                 <span data-animate="fadeInUp">All-season Outdoor Spa Pool He:on</span>
                             </div>
-                            <p>오감만족 힐링, 사계절 따뜻한 롯데호텔제주 럭셔리 스파, 가든 해온(海溫).
+                            <p>오감만족 힐링, 사계절 따뜻한 델루나 호텔 제주 럭셔리 스파, 가든 해온(海溫).
                             <p>바다 해(海)와 따뜻할 온(溫)을 품은 이름처럼,<br>제주의 자연을 그대로 닮은 사계절 온수풀입니다.</p>
-                            <a href="menu-item.jsp" class="btn btn-primary" role="button">자세히 보기</a>
+                            <a href="<c:url value="/menu-item"/>" class="btn btn-primary" >자세히 보기</a>
                         </div>
                     </div>
            	  </div>                     
@@ -506,11 +507,11 @@
 
                             			<div class="widget_links clearfix">
                                 			<ul>
-                                    			<li><a href="<c:url value='/'/>"><div>메인</div></a></li>
-                                    			<li><a href="list.do"><div>공지사항</div></a></li>
-                                    			<li><a href="hotel-About-Us.html"><div>호텔소개</div></a></li>
-                                    			<li><a href="Location.html"><div>호텔위치</div></a></li>
-                                                <li><a href="contact-1.jsp"><div>고객의 소리</div></a></li>
+                                    		<li><a href="<c:url value='/'/>"><div>메인</div></a></li>
+                                    		<li><a href="<c:url value='/notice/NoticeList'/>"><div>공지사항</div></a></li>
+                                    		<li><a href="<c:url value="/hotel-About-Us"/>"><div>호텔소개</div></a></li>
+                                    		<li><a href="<c:url value="/Location"/>"><div>호텔위치</div></a></li>
+                                            <li><a href="<c:url value="/contact-1"/>"><div>고객의 소리</div></a></li>
                                 			</ul>
                             			</div>
                                     </div>
@@ -519,9 +520,9 @@
 
                             			<div class="widget_links clearfix">
                                 			<ul>
-                                    			<li><a href="deluxe-1.html"><div>객실 - 디럭스</div></a></li>
-                                    			<li><a href="suite-1.html"><div>객실 - 스위트</div></a></li>
-                                    			<li><a href="dining-1.html"><div>다이닝</div></a></li>
+                                    			<li><a href="<c:url value="/deluxe-1"/>"><div>객실 - 디럭스</div></a></li>
+                                    			<li><a href="<c:url value="/suite-1"/>"><div>객실 - 스위트</div></a></li>
+                                    			<li><a href="<c:url value="/dining-1"/>"><div>다이닝</div></a></li>
                                     			<li><a href="<c:url value='/reservation/r'/>"><div>예약하기</div></a></li>
                                                 <li><a href="<c:url value='/reservation/ReservationSelect'/>"><div>예약조회 및 취소</div></a></li>
                                 			</ul>
@@ -564,7 +565,6 @@
             <!-- Copyrights
             ============================================= -->
             <div id="copyrights">
-
                 <div class="container clearfix">
 
                     <div class="col_half">
@@ -575,47 +575,30 @@
 
                     <div class="col_half col_last tright">
                         <div class="copyrights-menu copyright-links fright clearfix">
-                            <a href="#">공지사항</a> <a href="hotel-About-Us.html">호텔소개</a> <a href="deluxe-1.html">객실</a> <a href="<c:url value='/reservation/ReservationSelect'/>">예약조회 및 취소</a> <a href="contact-1.jsp">고객의 소리</a>
+                            <a href="<c:url value='/notice/NoticeList'/>">공지사항</a>
+                             <a href="<c:url value="/hotel-About-Us"/>">호텔소개</a>
+                              <a href="<c:url value="/deluxe-1"/>">객실</a>
+                               <a href="<c:url value='/reservation/ReservationSelect'/>">예약조회 및 취소</a>
+                                <a href="<c:url value="/contact-1"/>">고객의 소리</a>
                         </div>
                         <div class="fright clearfix">
-                            <a href="#" class="social-icon si-small si-borderless nobottommargin si-facebook">
+                            <a href="https://www.facebook.com/" class="social-icon si-small si-borderless nobottommargin si-facebook">
                                 <i class="icon-facebook"></i>
                                 <i class="icon-facebook"></i>
                             </a>
 
-                            <a href="#" class="social-icon si-small si-borderless nobottommargin si-twitter">
+                            <a href="https://twitter.com/explore" class="social-icon si-small si-borderless nobottommargin si-twitter">
                                 <i class="icon-twitter"></i>
                                 <i class="icon-twitter"></i>
                             </a>
-
-                            <a href="#" class="social-icon si-small si-borderless nobottommargin si-gplus">
-                                <i class="icon-gplus"></i>
-                                <i class="icon-gplus"></i>
-                            </a>
-
-                            <a href="#" class="social-icon si-small si-borderless nobottommargin si-pinterest">
-                                <i class="icon-pinterest"></i>
-                                <i class="icon-pinterest"></i>
-                            </a>
-
-                            <a href="#" class="social-icon si-small si-borderless nobottommargin si-vimeo">
-                                <i class="icon-vimeo"></i>
-                                <i class="icon-vimeo"></i>
-                            </a>
-
-                            <a href="#" class="social-icon si-small si-borderless nobottommargin si-github">
+                            <a href="https://github.com/park002" class="social-icon si-small si-borderless nobottommargin si-github">
                                 <i class="icon-github"></i>
                                 <i class="icon-github"></i>
                             </a>
 
-                            <a href="#" class="social-icon si-small si-borderless nobottommargin si-yahoo">
+                            <a href="https://www.yahoo.com/" class="social-icon si-small si-borderless nobottommargin si-yahoo">
                                 <i class="icon-yahoo"></i>
                                 <i class="icon-yahoo"></i>
-                            </a>
-
-                            <a href="#" class="social-icon si-small si-borderless nobottommargin si-linkedin">
-                                <i class="icon-linkedin"></i>
-                                <i class="icon-linkedin"></i>
                             </a>
                         </div>
                     </div>
