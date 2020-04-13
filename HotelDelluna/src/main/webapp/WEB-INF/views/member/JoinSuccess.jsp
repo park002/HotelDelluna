@@ -60,7 +60,7 @@
                  <nav id="primary-menu">
 
                         <ul class="">
-                            <li class="current"><a href="<c:url value="/hotel-About-Us"/>"><div>호텔소개</div></a>
+                            <li><a href="<c:url value="/hotel-About-Us"/>"><div>호텔소개</div></a>
                                         <ul>                                
                                     		<li><a href="<c:url value="/hotel-About-Us"/>"><div>호텔소개</div></a></li>
                                     		<li><a href="<c:url value="/Location"/>"><div>호텔위치</div></a></li>
@@ -111,7 +111,7 @@
                             
                                <c:choose>
                                		<c:when test="${m_id eq null}">         
-                           		 			<li><a href="<c:url value ='/member/LoginLogOut'/>"><div>로그인</div></a>
+                           		 			<li class="current"><a href="<c:url value ='/member/LoginLogOut'/>"><div>로그인</div></a>
                            		 		<ul>
                                 	    	<li><a href="<c:url value ='/member/LoginLogOut'/>"><div>로그인</div></a></li>
                                 	   		<li><a href="<c:url value='/member/MemberInsert'/>"><div>회원가입</div></a></li>

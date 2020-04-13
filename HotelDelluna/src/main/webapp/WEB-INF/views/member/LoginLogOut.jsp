@@ -92,7 +92,7 @@
 										for="ckb1"> Remember me </label>
 								</div>
 								<div>
-									<a href="searchIdpass.jsp" class="txt1"> Forgot Password? </a>
+									<!-- <a href="searchIdpass.jsp" class="txt1"> Forgot Password? </a> -->
 								</div>
 							</div>
 						
