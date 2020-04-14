@@ -163,7 +163,14 @@
 
                                 <h2>그랜드 스위트(Grand Suite)</h2>
                                 <p>
-                               <a href="<c:url value='/reservation/r'/>" class="btn btn-primary" role="button">예약하기</a>
+                           <c:choose>
+	                              <c:when test="${m_id ne null}">
+	                               		<a href="<c:url value='/reservation/r'/>" class="btn btn-primary" role="button">예약하기</a>
+	                               </c:when>
+                               <c:otherwise>
+                                    <a href="<c:url value='/member/LoginLogOut'/>" class="btn btn-primary" role="button">예약하기</a>
+                               </c:otherwise>
+                             </c:choose>
                                <a href="<c:url value='/contact-1'/>" class="btn btn-primary" role="button">문의하기</a>
                                 </p>
                                <div class="entry clearfix">

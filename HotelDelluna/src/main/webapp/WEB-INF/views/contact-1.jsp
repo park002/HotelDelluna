@@ -175,8 +175,6 @@
                                 <input type="email" id="template-contactform-email" name="template-contactform-email" value="" class="required email sm-form-control" disabled />
                             </div>
 
-                         
-
                             <div class="clear"></div>
 
                             <div class="col_two_third">

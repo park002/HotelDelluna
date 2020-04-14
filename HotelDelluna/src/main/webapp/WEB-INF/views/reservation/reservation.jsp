@@ -185,8 +185,6 @@
 	<section id="page-title" class="page-title-parallax"
 		style="background-image: url('<c:url value="/resources/images/hotel-about/main.jpg"/>'); padding: 120px 0;"
 		data-stellar-background-ratio="0.3">
-		
-		
 	
 		<div class="container clearfix">
 			<h1>호텔 델루나 예약</h1>
@@ -201,14 +199,14 @@
 	
 	<c:if test="${confirmation_payment eq '1'}"> 
 	         			<script>
-	         			alert('현재 예약하신 방이 있습니다 변경을 원하실 경우 취소 후 다시 예약 해주시기 바랍니다.');
-	         		 location.href="${pageContext.request.contextPath}/reservation/ReservationSelect";
+	         	 alert('현재 예약하신 룸이 있습니다 변경을 원하실 경우 취소 후 다시 예약 해주시기 바랍니다.');
+	         	 location.href="${pageContext.request.contextPath}/reservation/ReservationSelect"; 
 	         		</script>
 	         		</c:if>
 	   <c:if test ="${confirmation_payment eq '0'}">
 	         <script>
 	        	alert(' 현재 결제가 되지 않은 룸이 있습니다 결제 또는 취소 후 예약 해주시기 바랍니다 감사합니다');
-			 location.href="${pageContext.request.contextPath}/reservation/ReservationSelect";
+		        location.href="${pageContext.request.contextPath}/reservation/ReservationSelect"; 
 	         </script>
 	   </c:if>      		
 	
@@ -252,7 +250,7 @@
 		            :mode="'range'"
 		            :date-one="buttonDateOne"
 		            :date-two="buttonDateTwo"
-		            :min-date="'2019-10-20'"
+		            :min-date="'2020-04-26'"
 		            :fullscreen-mobile="true"
 		            :months-to-show="2"
 		            :offset-y="10"
