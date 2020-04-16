@@ -15,13 +15,13 @@ import com.hotel.jaeho.DTO.MemberDTO;
 import com.hotel.jaeho.Service.MemberService;
 
 @Controller
-@RequestMapping("/member/")
+@RequestMapping("member")
 public class MemberController {
 
 	@Autowired
 	MemberService service;
 
-	@RequestMapping("/LoginLogOut")
+	@RequestMapping("LoginLogOut")
 	public String LoginLogout() {
 		return "/member/LoginLogOut";
 	}
