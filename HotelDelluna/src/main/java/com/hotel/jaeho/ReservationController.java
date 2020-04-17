@@ -27,6 +27,7 @@ public class ReservationController {
 		model.addAttribute("confirmation_payment", confirmation_payment);
 		return "/reservation/reservation";
 	}
+	
 	@RequestMapping(value = "/reservation1", method = RequestMethod.POST)
 	public String reservation(ReservationDTO dto, HttpSession session, Model model) throws ParseException {
 		dto.setM_id((String) session.getAttribute("m_id"));
@@ -71,6 +72,7 @@ public class ReservationController {
 		service.ReservationDelete();
 		return "/index";
 	}
+	
 	@ResponseBody
 	@RequestMapping(value = "/ReservationPasswordCheck", method = RequestMethod.POST)
 	public boolean PasswordCheck(@RequestParam("m_id") String m_id, @RequestParam("m_password") String m_password) {
