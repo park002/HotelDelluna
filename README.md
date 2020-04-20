@@ -5,8 +5,8 @@
  www.parkjaeho.xyz 
 
 ## How to use  
- ** 회원당 하나의 예약만 가능합니다. **
-1. 로그인 후 사용을 해야합니다.   if(!회원)일 경우 *예약이 불가*합니다
+ **회원당 하나의 예약만 가능합니다.**
+1. 로그인 후 사용을 해야합니다.   비회원일 경우 예약이 ~~불가능~~ 합니다
 2. 날짜를 선택 후 원하는 룸을 선택합니다.
 3. 결제를 합니다.
 4. 결제 후 예약 조회/취소를 클릭합니다.
@@ -14,7 +14,19 @@
 
 
  ## Development environment
- 
+
+  * Java 1.8
+  * Spring 4.3.4
+  * Mysql 5.1
+  * Web Server Tomcat 8.5
+  * HTML CSS JavaScript
+  * jQuery
+  * BootStrap
+  * AWS EC2
+  * Gabia
+  
+   
+  
   
 
 
