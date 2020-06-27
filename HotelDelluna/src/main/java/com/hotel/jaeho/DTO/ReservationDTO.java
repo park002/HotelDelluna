@@ -25,8 +25,6 @@ public class ReservationDTO {
 	private int child;// 어린이
 	private int price;// 방 가격
 
-	
-
 	public boolean isConfirmation_payment() {
 		return confirmation_payment;
 	}

@@ -250,7 +250,7 @@
 		            :mode="'range'"
 		            :date-one="buttonDateOne"
 		            :date-two="buttonDateTwo"
-		            :min-date="'2020-04-26'"
+		            :min-date="'2020-04-18'"
 		            :fullscreen-mobile="true"
 		            :months-to-show="2"
 		            :offset-y="10"

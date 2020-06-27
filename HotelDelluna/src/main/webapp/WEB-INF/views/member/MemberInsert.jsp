@@ -203,6 +203,7 @@ style="background-image: url('<c:url value="/resources/images/hotel-about/main.j
                     	}
                     });
                 });
+                    
                     function beforeSubmit() {
                     	if ($("#sample2_postcode").val() =="" || null) {
                     		alert('우편번호 찾기를 클릭해주세요')

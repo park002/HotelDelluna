@@ -27,7 +27,7 @@ public class NoticeController {
 //공지사항 클릭 했을 경우 
 	@RequestMapping(value = "/NoticeList", method = RequestMethod.GET)
 	public ModelAndView Notice(@RequestParam(value = "curPage", required = false, defaultValue = "1") int curPage,
-			@RequestParam(value = "Search", defaultValue = "Search") String Search,
+			@RequestParam(value = "Search", required = false) String Search,
 			@RequestParam(value = "Searchtext", required = false) String Searchtext) {
 		ModelAndView mav = new ModelAndView();
 		int count = service.SelectCount(Search, Searchtext);

@@ -231,6 +231,7 @@ style="background-image: url('<c:url value="/resources/images/hotel-about/main.j
                         </form>
                          </c:if>
                        <script>
+                       
                        $("#pay").click(function(){
                     	   location.href = "${pageContext.request.contextPath}/reservation/ReservationPay?number=${dto.reservation_number}"
                        });

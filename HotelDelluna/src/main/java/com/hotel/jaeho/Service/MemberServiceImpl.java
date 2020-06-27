@@ -7,7 +7,7 @@ import com.hotel.jaeho.DAO.MemberDAO;
 import com.hotel.jaeho.DTO.MemberDTO;
 
 @Service
-public class MemberServiceImpl implements MemberService {
+public class MemberServiceImpl implements MemberService { //스프링 빈 생성
 	
  @Autowired
   MemberDAO dao;
@@ -24,7 +24,6 @@ public class MemberServiceImpl implements MemberService {
 	@Override
 		public String MemberLogin(MemberDTO dto) {
 			// TODO Auto-generated method stub
-		
 			return dao.MemberLogin(dto);
 		}
 }

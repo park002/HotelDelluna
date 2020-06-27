@@ -23,7 +23,6 @@ public class MemberDAOImpl implements MemberDAO {
 	public void MemberInsert(MemberDTO dto) {
 		// TODO Auto-generated method stub
 		  sqlSession.selectOne(namespace+".MemberInsert", dto);
-		
 	}
 	@Override
 	public String MemberLogin(MemberDTO dto) {
