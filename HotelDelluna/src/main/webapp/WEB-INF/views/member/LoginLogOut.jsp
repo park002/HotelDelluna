@@ -58,7 +58,7 @@
 		                $("#aaa").html('가입하지 않은 아이디이거나, 잘못된 비밀번호입니다.');
 		                    }
 			    else {
-			    	location.href='${pageContext.request.contextPath}/'; 
+			    	location.href='<c:url value="/"/>'; 
 			     }
 			  }
         }); 

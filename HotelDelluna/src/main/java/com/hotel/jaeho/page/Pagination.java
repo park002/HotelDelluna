@@ -5,7 +5,7 @@ public class Pagination {
 	// 페이지당 게시물 수
 	public static final int PAGE_SCALE = 5;
 	// 화면당 페이지 수
-	public static final int BLOCK_SCALE = 5;
+	public static final int BLOCK_SCALE = 6;
 	private int curPage; // 현재 페이수
 	private int prevPage; // 이전 페이지
 	private int nextPage; // 다음 페이지
@@ -101,7 +101,7 @@ public class Pagination {
 	public int getTotPage() {
 		return totPage;
 	}
-	public void setTotPage(int count) {
+	public void setTotPage(int count) { //10
 		// 91개의 게시물을 10개씩 9페이지를 처리하고 남은 1개의 게시물도 페이지에 출력하기 위해서는
 		// 항상 올림으로 처리해야한다.
 		// Math.ceil(실수) 올림 처리

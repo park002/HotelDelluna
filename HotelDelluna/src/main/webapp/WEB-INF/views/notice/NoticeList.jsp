@@ -196,16 +196,16 @@
 
 		<script>
 		//http://localhost:8090/jaeho/notice/NoticeList?curPage=2&Search=Search&
-		function page(curPage) {
-		 	<%-- /*location.href="?curPage="+curPage+"&Search=${Search}"+"&Searchtext=${Searchtext}" 
-		 	 location.href="<c:url value='/notice/NoticeList?curPage='+${}/>"*/ --%>
+		function page1(curPage) {
+		 <%--/* /* 	 location.href="?curPage="+curPage+"&Search=${Search}"+"&Searchtext=${Searchtext}" 
+		 	 location.href="<c:url value='/notice/NoticeList?curPage='+${}/>"
 			 location.href='<c:url value="?curPage='+curPage+'">
 						<c:param name="Search">${Search}</c:param>
 						<c:if test="${!empty Searchtext}"><c:param name="Searchtext">${Searchtext}</c:param></c:if>
 					</c:url>'
 				 	
 					 
-			location.href='?curPage='+curPage+'&Search=${Search}&Searchtext=${Searchtext}';
+			location.href='?curPage='+curPage+'&Search=${Search}&Searchtext=${Searchtext}'; 
 		 	 <%-- /*  location.href="<c:url value='/notice/NoticeList?curPage='+curPage/>" */  --%>
 		}
 		
@@ -227,7 +227,8 @@
 		<c:forEach items="${list}" var="NoticeList"> 
 			<tr>
 				      <td><c:out value="${NoticeList.b_no}"/> </td>
-				   <td> <a href ="<c:url value='/notice/NoticeContent?b_no=${NoticeList.b_no}'/>"><c:out value="${NoticeList.b_title}"/> </a></td>
+				   <td> <a href ="<c:url value='/notice/NoticeContent?b_no=${NoticeList.b_no}'/>">
+				   			<c:out value="${NoticeList.b_title}"/> </a></td>
 				      <td> <fmt:formatDate value="${NoticeList.b_date}" pattern="yyyy-MM-dd"/></td>
 				      <td><c:out value="${NoticeList.b_count}"/> </td>
 		      </tr>
@@ -237,8 +238,18 @@
 	  <!--     <a href="#" onclick="page(2)">asasdasdda </a> -->
 	<!-- //http://localhost:8090/jaeho/notice/NoticeList?curPage=2&Search=Search& -->
 	 <!--  //http://locatlhost:8090/jaeho/notice/noticeList?curPage=1&Search=Search -->
+	 <!--  --> <!--  --> <!--  --> <!--  --> <!--  --> <!--  --> <!--  --> <!--  --> <!--  --> <!--  --> <!--  --> <!--  --> <!--  --> <!--  --> <!--  -->
+	 <script>
+	 function list(page) {
+		location.href="${pageContext.request.contextPath}/notice/NoticeList?curPage="+page+
+				"&Search=${Search}&Searchtext=${Searchtext}"
+	}
+	 </script>
+
+	 <a href="#" onclick="list(1)">[처음]</a>
 	 
- 	<div id="paging" style="text-align:center"> 
+	
+ <%-- 	<div id="paging" style="text-align:center"> 
 		  <c:if test="${1<page.curBlock}">
 		<a href="<c:url value="?">
 					<c:param name="curPage">1</c:param>
@@ -282,7 +293,7 @@
 					<c:if test="${!empty Searchtext}"><c:param name="Searchtext">${Searchtext}</c:param></c:if>
 				</c:url>"> 끝 </a>
 		     </c:if>
-   </div>
+   </div> --%>
     
         </section><!-- #content end --> 
 
