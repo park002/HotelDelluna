@@ -166,6 +166,7 @@ public class Pagination {
 	public String toString() {
 		return "Pagination2 [curPage=" + curPage + ", prevPage=" + prevPage + ", nextPage=" + nextPage + ", totPage="
 				+ totPage + ", totBlock=" + totBlock + ", curBlock=" + curBlock + ", prevBlock=" + prevBlock
+				
 				+ ", nextBlock=" + nextBlock + ", pageBegin=" + pageBegin + ", pageEnd=" + pageEnd + ", blockBegin="
 				+ blockBegin + ", blockEnd=" + blockEnd + "]";
 	}

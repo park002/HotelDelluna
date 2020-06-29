@@ -245,9 +245,33 @@
 				"&Search=${Search}&Searchtext=${Searchtext}"
 	}
 	 </script>
+<c:if test="${1<page.curBlock}">
+<a href="#" onclick="list(1)">[처음]</a>
+</c:if>
 
-	 <a href="#" onclick="list(1)">[처음]</a>
-	 
+<c:if test="${1<page.curBlock}">
+<a href="#" onclick="list(${page.prevPage})">[이전]</a>
+</c:if>
+
+<c:forEach begin="${page.blockBegin}" end="${page.blockEnd}" var="num"> 
+<c:choose>
+<c:when test="${num eq page.curPage}">
+	<span style="color:red">${num}</span>&nbsp
+</c:when>
+<c:otherwise>
+	<a href="#" onclick="list(${num})">${num}</a>
+</c:otherwise>
+</c:choose>
+</c:forEach>
+
+	 <c:if test="${page.curBlock <=page.totBlock}">
+	 <a href="#" onclick="list(${page.nextPage})">[다음]</a>
+	  </c:if>
+	  
+	  <c:if test="${page.curBlock<=page.totPage}">
+	  <a href="#" onclick="list(${page.totPage})">[끝] </a>
+	  </c:if>
+	  
 	
  <%-- 	<div id="paging" style="text-align:center"> 
 		  <c:if test="${1<page.curBlock}">
@@ -283,7 +307,8 @@
 		    		<a href="<c:url value="?">
 					<c:param name="curPage">${page.nextPage}</c:param>
 					<c:param name="Search">${Search}</c:param>
-					<c:if test="${!empty Searchtext}"><c:param name="Searchtext">${Searchtext}</c:param></c:if>
+					<c:if test="${!empty Searchtext}">
+					<c:param name="Searchtext">${Searchtext}</c:param></c:if>
 				</c:url>">다음</a>
 		     </c:if>
 		     <c:if test="${page.curBlock <=page.totPage}">
